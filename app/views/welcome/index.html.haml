@@ -1,0 +1,87 @@
+/ Navigation
+%nav.navbar.navbar-inverse.navbar-fixed-top{:role => "navigation"}
+  .container
+    / Brand and toggle get grouped for better mobile display
+    .navbar-header
+      %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{href: '/'}
+        tuRBo
+        %i.fa.fa-rocket
+    / Collect the nav links, forms, and other content for toggling
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li
+          %a{href: '/users'} Authors
+        %li
+          %a{href: '/categories'} Categories
+        %li
+          %a{href: '/about'} About
+    / /.navbar-collapse
+  / /.container
+/ Page Content
+.container
+  .row
+    / Blog Entries Column
+    .col-md-8
+      %h1.page-header
+        tuRBo
+        %i.fa.fa-rocket.danger
+        %small the ultimate ruby blog :O
+      / First Blog Post
+      = render partial: 'article_list'
+    / Blog Sidebar Widgets Column
+    .col-md-4
+      / Blog Search Well
+      .well
+        %h4 Blog Search
+        .input-group
+          %input.form-control{:type => "text"}
+            %span.input-group-btn
+              %button.btn.btn-default{:type => "button"}
+                %span.glyphicon.glyphicon-search
+        / /.input-group
+      / Blog Categories Well
+      .well
+        %h4 Blog Categories
+        .row
+          .col-lg-6
+            %ul.list-unstyled
+              %li
+                %a{:href => "#"} Category Name
+              %li
+                %a{:href => "#"} Category Name
+              %li
+                %a{:href => "#"} Category Name
+              %li
+                %a{:href => "#"} Category Name
+          / /.col-lg-6
+          .col-lg-6
+            %ul.list-unstyled
+              %li
+                %a{:href => "#"} Category Name
+              %li
+                %a{:href => "#"} Category Name
+              %li
+                %a{:href => "#"} Category Name
+              %li
+                %a{:href => "#"} Category Name
+          / /.col-lg-6
+        / /.row
+      / Side Widget Well
+      .well
+        %h4 Side Widget Well
+        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.
+  / /.row
+  %hr
+    / Footer
+    %footer
+      .row
+        .col-lg-12
+          %p Copyright &copy; Your Website 2014
+        / /.col-lg-12
+      / /.row
+/ /.container

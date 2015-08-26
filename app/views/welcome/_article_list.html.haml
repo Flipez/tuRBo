@@ -1,0 +1,13 @@
+- @articles.each do |article|
+  %h2
+    %a{:href => "#"}
+      = article.title
+  %p
+    = article.text
+  %p.text-muted
+    by
+    %a{href: "/users/#{article.user.id}"}
+      = article.user.name
+    %span.fa.fa-clock-o
+      = article.created_at
+  %hr
