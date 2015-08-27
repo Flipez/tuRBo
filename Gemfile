@@ -10,7 +10,6 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 
 gem "therubyracer"
-gem "twitter-bootstrap-rails"
 
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
