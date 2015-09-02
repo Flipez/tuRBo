@@ -1,0 +1,22 @@
+%body
+  #wrapper
+    / Navigation
+    %nav.navbar.navbar-default.navbar-static-top{:role => "navigation", :style => "margin-bottom: 0"}
+      .navbar-default.sidebar{:role => "navigation"}
+        .sidebar-nav.navbar-collapse
+          %ul#side-menu.nav
+            %li
+              %a{:href => "index.html"}
+                %i.fa.fa-dashboard.fa-fw
+                Dashboard
+        / /.sidebar-collapse
+      / /.navbar-static-side
+    #page-wrapper
+      .row
+      / /.row
+    / /#page-wrapper
+  / /#wrapper
+  / Metis Menu Plugin JavaScript
+  %script{:src => "../bower_components/metisMenu/dist/metisMenu.min.js"}
+  / Custom Theme JavaScript
+  %script{:src => "../dist/js/sb-admin-2.js"}
