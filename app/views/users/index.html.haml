@@ -1,0 +1,24 @@
+.container
+  .row
+    .col-md-8
+      %h1.page-header
+        Listing users
+      %table.table.table-hover
+        %thead
+          %tr
+            %th Name
+            %th Article
+            %th
+            %th
+            %th
+      
+        %tbody
+          - @users.each do |user|
+            %tr
+              %td= user.name
+              %td= user.articles.count
+              %td= link_to 'Show', user
+              %td= link_to 'Edit', edit_user_path(user)
+              %td= link_to 'Destroy', user, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    .col-md-4
+      = render partial: 'welcome/sidebar'
