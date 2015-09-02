@@ -55,6 +55,8 @@ GEM
     coffee-script-source (1.9.1.1)
     columnize (0.9.0)
     debug_inspector (0.0.2)
+    erb2haml (0.1.5)
+      html2haml
     erubis (2.7.0)
     execjs (2.5.2)
     globalid (0.3.5)
@@ -179,6 +181,7 @@ DEPENDENCIES
   bcrypt-ruby
   byebug
   coffee-rails (~> 4.1.0)
+  erb2haml
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails
@@ -195,4 +198,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.10.5
+   1.10.6
