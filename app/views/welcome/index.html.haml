@@ -10,28 +10,8 @@
       = render partial: 'article_list'
     / Blog Sidebar Widgets Column
     .col-md-4
-      .well
-        %h4 
-          %i.fa.fa-hand-spock-o.fa-fw
-          Welcome
-        %p If I like you, you may be warm welcomed here.
-      .well
-        %h4
-          %i.fa.fa-archive.fa-fw
-          Blog Categories
-        = render partial: 'category_list'
-      .well
-        %h4
-          %i.fa.fa-child.fa-fw
-          About
-        %p
-          This blog is built with Ruby on Rails, feeded by SQLite and fired up with Puma.
-          You may find more information 
-          %a{href: '/about'} here.
-          If you like to improve our work, feel free to contribute to our
-          %a{href: 'https://github.com/Flipez/tuRBo'} GitHub repository.
-
-  / /.row
+      = render partial: 'sidebar'
+      / /.row
   %hr
     / Footer
     %footer
