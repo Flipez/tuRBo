@@ -1,0 +1,36 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title tuRBo - the ultimate ruby blog
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css", :rel => "stylesheet"}/
+    %link{:href => "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css", :rel => "stylesheet"}/
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    %script{:src => "//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"}
+    = csrf_meta_tags
+  %body{style: 'padding-top:0px'}
+    #wrapper
+      %nav.navbar.navbar-default.navbar-static-top{:role => "navigation", :style => "margin-bottom: 0"}
+        .navbar-header
+          %a.navbar-brand{href: '/'}
+            tuRBo
+            %i.fa.fa-rocket.fa-fw
+            \- Dashboard
+        .navbar-default.sidebar{:role => "navigation"}
+          .sidebar-nav.navbar-collapse
+            %ul#side-menu.nav
+              %li
+                %a{:href => "/admin"}
+                  %i.fa.fa-dashboard.fa-fw
+                  Dashboard
+              %li
+                %a{:href => "/admin/users"}
+                  %i.fa.fa-users.fa-fw
+                  Users
+              %li
+                %a{:href => "/admin/articles"}
+                  %i.fa.fa-archive.fa-fw
+                  Articles
+      #page-wrapper
+        = yield
