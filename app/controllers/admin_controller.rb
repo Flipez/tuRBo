@@ -28,8 +28,27 @@ class AdminController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  ## Article
+
+  def article_index
+  end
+
+  def article_new
+  end
+
+  def article_create
+    @article = Article.new(article_params)
+    @article.save
+    flash[:success] = 'Artikel wurde angelegt'
+    redirect_to :back
+  end
+
   private
     def user_params
       params.require(:user).permit(:name, :password)
+    end
+
+    def article_params
+      params.require(:article).permit(:title, :text)
     end
 end

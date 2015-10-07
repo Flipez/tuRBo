@@ -1,0 +1,23 @@
+.row
+  .panel.panel-primary
+    .panel-heading
+      Aktuelle Artikel
+    .panel-body
+      %table.table.table-hover
+        %thead
+          %th.col-md-1
+          %th ID
+          %th Titel
+          %th Datum
+          %th Zuletzt bearbeitet
+        %tbody
+          - @articles.each do |article|
+            %tr
+              %td
+                %i.fa.fa-user.fa-fw
+              %td= article.id
+              %td= article.title
+              %td= article.created_at
+              %td= article.updated_at
+  %a.btn.btn-primary{type: :button, href: 'articles/new'}
+    Neuen Artikel anlegen

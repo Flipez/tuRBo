@@ -1,0 +1,15 @@
+.row
+  .panel.panel-primary
+    .panel-heading
+      Artikel anlegen
+    .panel-body
+      = form_for :article do |f|
+        .form-group
+          = f.label :title
+          = f.text_field :title, class: 'form-control'
+
+        .form-group
+          = f.label :text
+          = f.text_area :text, class: 'form-control'
+
+        = f.submit class: 'form-control'
