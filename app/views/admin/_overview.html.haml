@@ -1,0 +1,51 @@
+.row{style: 'padding-top: 50px'}
+  .col-lg-12
+    .col-lg-4.col-md-6
+      .panel.panel-info
+        .panel-heading
+          .row
+            .col-xs-3
+              %i.fa.fa-users.fa-5x
+            .col-xs-9.text-right
+              .huge
+                = @users.count
+              %div Registrierte Benutzer
+        %a{:href => "/admin/users"}
+          .panel-footer
+            %span.pull-left Erfahre mehr
+            %span.pull-right
+              %i.fa.fa-arrow-circle-right
+            .clearfix
+    .col-lg-4.col-md-6
+      .panel.panel-success
+        .panel-heading
+          .row
+            .col-xs-3
+              %i.fa.fa-file.fa-5x
+            .col-xs-9.text-right
+              .huge
+                = @articles.count
+              %div Artikel insgesamt
+        %a{:href => "/admin/articles"}
+          .panel-footer
+            %span.pull-left Erfahre mehr
+            %span.pull-right
+              %i.fa.fa-arrow-circle-right
+            .clearfix
+    .col-lg-4.col-md-6
+      .panel.panel-warning
+        .panel-heading
+          .row
+            .col-xs-3
+              %i.fa.fa-archive.fa-5x
+            .col-xs-9.text-right
+              .huge
+                = @categories.count
+              %div Kategorien insgesamt
+        %a{:href => "/admin/categories"}
+          .panel-footer
+            %span.pull-left Erfahre mehr
+            %span.pull-right
+              %i.fa.fa-arrow-circle-right
+            .clearfix
+/ /.row

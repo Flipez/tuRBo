@@ -1,0 +1,19 @@
+.row
+  .panel.panel-primary
+    .panel-heading
+      Registrierte Benutzer
+    .panel-body
+      %table.table.table-hover
+        %thead
+          %th.col-md-1
+          %th ID
+          %th Name
+        %tbody
+          - @users.each do |user|
+            %tr
+              %td
+                %i.fa.fa-user.fa-fw
+              %td= user.id
+              %td= user.name
+  %a.btn.btn-primary{type: :button, href: 'users/new'}
+    Neuen Benutzer anlegen
