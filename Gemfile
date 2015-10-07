@@ -19,7 +19,7 @@ gem 'haml-rails'
 
 gem 'puma'
 
-gem 'bcrypt-ruby'
+gem 'bcrypt'
 
 gem 'pry-rails'
 
