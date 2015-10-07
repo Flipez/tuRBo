@@ -16,3 +16,5 @@
 //= require_tree .
 //= require sb-admin-2
 //= require metisMenu.min
+//= require bootstrap-wysihtml5
+//= require bootstrap-wysihtml5/locales

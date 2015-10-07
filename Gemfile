@@ -10,6 +10,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 
 gem "therubyracer"
+gem 'bootstrap-wysihtml5-rails'
 
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
