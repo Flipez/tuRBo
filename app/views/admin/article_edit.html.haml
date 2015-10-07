@@ -1,7 +1,7 @@
 .row
   .panel.panel-primary
     .panel-heading
-      Artikel anlegen
+      Artikel bearbeiten
     .panel-body
       = form_for :article do |f|
         .form-group
@@ -10,7 +10,8 @@
 
         .form-group
           = f.label :text
-          = f.text_area :text, class: 'form-control wysihtml5'
+          = f.text_area :text, class: 'form-control wysihtml5',
+                               value: @article.text
 
         = f.submit class: 'form-control'
 :javascript

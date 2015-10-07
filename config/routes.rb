@@ -21,5 +21,8 @@ Rails.application.routes.draw do
   get '/admin/articles/new' => 'admin#article_new'
   post '/admin/articles/new' => 'admin#article_create'
   get '/admin/articles/:id' => 'admin#article_show'
+  delete '/admin/articles/:id' => 'admin#article_destroy'
+  get '/admin/articles/:id/edit' => 'admin#article_edit'
+  post '/admin/articles/:id/edit' => 'admin#article_save'
   
 end

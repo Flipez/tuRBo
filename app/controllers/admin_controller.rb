@@ -38,9 +38,27 @@ class AdminController < ApplicationController
 
   def article_create
     @article = Article.new(article_params)
-    @article.save
-    flash[:success] = 'Artikel wurde angelegt'
+    @article.user = User.first
+    if @article.save
+      flash[:success] = 'Artikel wurde angelegt'
+    else
+      p @article.errors.each{|x| x.to_s}
+    end
+    redirect_to "/admin/articles/#{@article.id}"
+  end
+  
+  def article_destroy
+    @article = Article.find(params[:id])
+    @article.destroy
     redirect_to :back
+  end
+  
+  def article_edit
+    @article = Article.find(params[:id])
+  end
+  
+  def article_show
+    @article = Article.find(params[:id])
   end
 
   private
