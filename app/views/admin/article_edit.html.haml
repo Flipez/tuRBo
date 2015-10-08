@@ -6,7 +6,7 @@
       = form_for :article do |f|
         .form-group
           = f.label :title
-          = f.text_field :title, class: 'form-control'
+          = f.text_field :title, class: 'form-control', maxlength: 25
 
         .form-group
           = f.label :text

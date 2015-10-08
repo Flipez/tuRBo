@@ -33,4 +33,6 @@
                   %i.fa.fa-archive.fa-fw
                   Articles
       #page-wrapper
+        - flash.each do |message_type, message|
+          %div{class: "alert alert-#{message_type}"}= message
         = yield

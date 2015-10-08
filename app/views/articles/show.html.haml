@@ -1,3 +1,9 @@
 %h1.page-header
   = @article.title
+  %small
+    %i.fa.fa-clock-o
+      = @article.created_at.strftime("%A, %d %B %Y at %k:%M")
+    - if @article.created_at != @article.updated_at
+      %i.fa.fa-edit
+        = @article.updated_at.strftime("%A, %d %B %Y at %k:%M")
 = raw @article.text
