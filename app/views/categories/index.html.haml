@@ -1,22 +1,18 @@
-.container
-  .row
-    .col-md-8
-      %h1.page-header
-        Listing categories
-      %table.table.table-hover
-        %thead
-          %tr
-            %th Name
-            %th
-            %th
-            %th
-      
-        %tbody
-          - @categories.each do |category|
-            %tr
-              %td= category.name
-              %td= link_to 'Show', category
-              %td= link_to 'Edit', edit_category_path(category)
-              %td= link_to 'Destroy', category, :method => :delete, :data => { :confirm => 'Are you sure?' }
-    .col-md-4
-      = render partial: 'welcome/sidebar'
+%h1.page-header
+  Listing categories
+%table.table.table-hover
+  %thead
+    %tr
+      %th Name
+      %th
+      %th
+      %th
+
+  %tbody
+    - @categories.each do |category|
+      %tr
+        %td= category.name
+        %td= link_to 'Show', category
+        %td= link_to 'Edit', edit_category_path(category)
+        %td= link_to 'Destroy', category, method: :delete, 
+                                          data: { confirm: 'Are you sure?' }

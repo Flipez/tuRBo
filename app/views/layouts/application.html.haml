@@ -12,7 +12,6 @@
   %body
     %nav.navbar.navbar-inverse.navbar-fixed-top{:role => "navigation"}
       .container
-        / Brand and toggle get grouped for better mobile display
         .navbar-header
           %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
             %span.sr-only Toggle navigation
@@ -22,7 +21,6 @@
           %a.navbar-brand{:href => "/"}
             tuRBo
             %i.fa.fa-rocket.fa-fw
-        / Collect the nav links, forms, and other content for toggling
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           %ul.nav.navbar-nav
             %li
@@ -31,8 +29,24 @@
               %a{:href => "/categories"} Categories
             %li
               %a{:href => "/about"} About
-        / /.navbar-collapse
-      / /.container
     - flash.each do |message_type, message|
-      %div{:class => "alert alert-#{message_type}"}= message
-    = yield
+      %div{class: "alert alert-#{message_type}"}= message
+    .container
+      .row
+        .col-md-8
+          = yield
+        .col-md-4
+          = render partial: 'sidebar'
+      %hr
+        %footer
+          .row
+            .col-lg-12
+              %p
+                Made with
+                %i.fa.fa-heart.fa-fw
+                by
+                %a{href: 'https://github.com/Flipez'}
+                  Robert Müller
+                and
+                %a{href: 'https://github.com/Nyomancer'}
+                  Nyomancer
