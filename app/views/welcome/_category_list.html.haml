@@ -1,9 +1,10 @@
 .row
   .col-lg-6
     %ul.list-unstyled
-      - @categories.each do |category|
-        %li
-          %a{href: "/categories/#{category.id}"} 
-            = category.name
-  / /.col-lg-6
-/ /.row
+      - if @categories.any?
+        - @categories.each do |category|
+          %li
+            %a{href: "/categories/#{category.id}"} 
+              = category.name
+      - else
+        No categories yet :(

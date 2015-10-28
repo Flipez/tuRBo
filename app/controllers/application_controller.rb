@@ -6,6 +6,13 @@ class ApplicationController < ActionController::Base
 
   before_filter :require_login
 
+  before_filter :set_variables
+
+
+  def set_variables
+    @categories = Category.all
+  end
+
   private
    
     def require_login

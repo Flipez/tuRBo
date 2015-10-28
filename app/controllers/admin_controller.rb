@@ -56,7 +56,19 @@ class AdminController < ApplicationController
   def article_edit
     @article = Article.find(params[:id])
   end
-  
+ 
+  def article_save
+    @article = Article.find(params[:id])
+    @article.update_attributes(article_params)
+    if @article.save
+      flash[:success] = 'Article successfully updated'
+      redirect_to "/admin/articles/#{@article.id}"
+    else
+      flash[:error] = @article.errors.join('<br />')
+      redirect_to :back
+    end
+  end
+
   def article_show
     @article = Article.find(params[:id])
   end

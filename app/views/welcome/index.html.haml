@@ -1,31 +1,5 @@
-/ Page Content
-.container
-  .row
-    / Blog Entries Column
-    .col-md-8
-      %h1.page-header
-        tuRBo
-        %i.fa.fa-rocket.fa-fw
-        %small the ultimate ruby blog :O
-      = render partial: 'article_list'
-    / Blog Sidebar Widgets Column
-    .col-md-4
-      = render partial: 'sidebar'
-      / /.row
-  %hr
-    / Footer
-    %footer
-      .row
-        .col-lg-12
-          %p
-            Made with
-            %i.fa.fa-heart.fa-fw
-            by
-            %a{href: 'https://github.com/Flipez'}
-              Robert Müller
-            and
-            %a{href: 'https://github.com/Nyomancer'}
-              Nyomancer
-        / /.col-lg-12
-      / /.row
-/ /.container
+%h1.page-header
+  tuRBo
+  %i.fa.fa-rocket.fa-fw
+  %small the ultimate ruby blog :O
+= render partial: 'article_list'
