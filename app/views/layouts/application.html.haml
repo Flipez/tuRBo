@@ -32,6 +32,14 @@
               %a{:href => "/about"} About
             %li
               %a{:href => "/admin"} Dashboard
+            - if logged_in?
+              %li
+                = link_to current_user.name, current_user, method: "get"
+              %li
+                = link_to "Log Out", logout_path, method: :delete
+            - else
+              %li
+                = link_to "Log In", login_path  
     - flash.each do |message_type, message|
       %div{class: "alert alert-#{message_type}"}= message
     .container
