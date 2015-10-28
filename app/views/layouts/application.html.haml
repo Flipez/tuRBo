@@ -6,6 +6,7 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css", :rel => "stylesheet"}/
     %link{:href => "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css", :rel => "stylesheet"}/
+    %link{:href => "https://cdn.jsdelivr.net/devicons/1.8.0/css/devicons.min.css", :rel => "stylesheet"}/
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     %script{:src => "//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"}
     = csrf_meta_tags
@@ -29,6 +30,8 @@
               %a{:href => "/categories"} Categories
             %li
               %a{:href => "/about"} About
+            %li
+              %a{:href => "/admin"} Dashboard
     - flash.each do |message_type, message|
       %div{class: "alert alert-#{message_type}"}= message
     .container
@@ -40,7 +43,7 @@
       %hr
         %footer
           .row
-            .col-lg-12
+            .col-lg-6
               %p
                 Made with
                 %i.fa.fa-heart.fa-fw
@@ -50,3 +53,6 @@
                 and
                 %a{href: 'https://github.com/Nyomancer'}
                   Nyomancer
+            .col-lg-6
+              %p.pull-right
+                Made without PHP and MySQL.
