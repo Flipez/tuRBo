@@ -12,11 +12,15 @@
   %body{style: 'padding-top:0px'}
     #wrapper
       %nav.navbar.navbar-default.navbar-static-top{:role => "navigation", :style => "margin-bottom: 0"}
-        .navbar-header
-          %a.navbar-brand{href: '/'}
-            tuRBo
-            %i.fa.fa-rocket.fa-fw
-            \- Dashboard
+        .container-fluid
+          .navbar-header
+            %a.navbar-brand{href: '/'}
+              tuRBo
+              %i.fa.fa-rocket.fa-fw
+              \- Dashboard
+            %ul.nav.navbar-nav
+              %li= link_to current_user.name, current_user, method: "get"
+              %li= link_to "Log Out", logout_path, method: "delete"
         .navbar-default.sidebar{:role => "navigation"}
           .sidebar-nav.navbar-collapse
             %ul#side-menu.nav
@@ -34,3 +38,4 @@
                   Articles
       #page-wrapper
         = yield
+
