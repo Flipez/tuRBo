@@ -23,4 +23,5 @@ en:
   sidebar_welcome_title: "Welcome"
   sidebar_welcome_content: "If I like you, you may be warm welcomed here"
   sidebar_about_title: "About"
-  sidebar_about_content: "This blog is built with Ruby on Rails, feeded by SQLite and fired up with Puma."
+  sidebar_about_content: "This blog is built with Ruby on Rails, feeded by SQLite and fired up with Puma.
+    If you like to improve our work, feel free to contribute to our GitHub repository"
