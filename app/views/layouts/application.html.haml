@@ -30,11 +30,11 @@
               %a{:href => "/categories"} Categories
             %li
               %a{:href => "/about"} About
-            %li
-              %a{:href => "/admin"} Dashboard
             - if logged_in?
               %li
-                = link_to current_user.name, current_user, method: "get"
+                %a{:href => "/admin"} Dashboard
+              %li
+                = link_to "Logged in as #{current_user.name}", current_user, method: "get"
               %li
                 = link_to "Log Out", logout_path, method: :delete
             - else
