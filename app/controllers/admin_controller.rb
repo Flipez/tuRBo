@@ -24,10 +24,6 @@ class AdminController < ApplicationController
     redirect_to :back
   end
 
-  def user_show
-    @user = User.find(params[:id])
-  end
-
   ## Article
 
   def article_index

@@ -1,0 +1,8 @@
+%h1.page-header
+  = @user.name
+-@articles.each do |article|
+  =article.title
+  %br
+  = truncate(sanitize(article.text, tags: []), length: 100)
+  %hr
+

@@ -19,7 +19,6 @@ Rails.application.routes.draw do
   get '/admin/users' => 'admin#user_index'
   get '/admin/users/new' => 'admin#user_new'
   post '/admin/users/new' => 'admin#user_create'
-  get '/admin/users/:id' => 'admin#user_show'
 
   get '/admin/articles' => 'admin#article_index'
   get '/admin/articles/new' => 'admin#article_new'
@@ -28,5 +27,7 @@ Rails.application.routes.draw do
   delete '/admin/articles/:id' => 'admin#article_destroy'
   get '/admin/articles/:id/edit' => 'admin#article_edit'
   post '/admin/articles/:id/edit' => 'admin#article_save'
+
+  get '/users/:id'  => 'user#show'
   
 end
