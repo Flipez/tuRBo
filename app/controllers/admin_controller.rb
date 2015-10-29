@@ -40,7 +40,7 @@ class AdminController < ApplicationController
     @article = Article.new(article_params)
     @article.user = User.first
     if @article.save
-      flash[:success] = 'Artikel wurde angelegt'
+      flash[:success] = I18n.t :admin_create_success
     else
       p @article.errors.each{|x| x.to_s}
     end
@@ -73,6 +73,35 @@ class AdminController < ApplicationController
     @article = Article.find(params[:id])
   end
 
+  ## Category
+
+  def category_index
+  end
+
+  def category_new
+  end
+
+  def category_create
+    @category = Category.new(category_params)
+    if @category.save
+      flash[:success] = I18n.t :admin_create_success
+    else
+      p @category.errors.each{|x| x.to_s}
+    end
+    redirect_to "/admin/categories"
+  end
+
+  def category_destroy
+    @category = Category.find(params[:id])
+    @category.destroy
+    if Category.where(id: params[:id]).any?
+      flash[:error] = I18n.t :admin_delete_error
+    else
+      flash[:success] = I18n.t :admin_delete_success
+    end
+    redirect_to :back
+  end
+  
   private
     def user_params
       params.require(:user).permit(:name, :password)
@@ -80,5 +109,9 @@ class AdminController < ApplicationController
 
     def article_params
       params.require(:article).permit(:title, :text)
+    end
+    
+    def category_params
+      params.require(:category).permit(:name)
     end
 end
