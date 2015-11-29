@@ -15,6 +15,7 @@ gem 'bootstrap-wysihtml5-rails'
 
 gem 'rails-i18n'
 
+gem 'impressionist'
 gem 'acts-as-taggable-on'
 
 gem 'turbolinks'

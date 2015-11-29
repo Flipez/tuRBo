@@ -1,9 +1,25 @@
 %h1.page-header
   = @article.title
   %small
-    %i.fa.fa-clock-o
-      = @article.created_at.strftime("%A, %d %B %Y at %k:%M")
-    - if @article.created_at != @article.updated_at
-      %i.fa.fa-edit
-        = @article.updated_at.strftime("%A, %d %B %Y at %k:%M")
+    by
+    = @article.user.name
+  %h5
+    %p
+      %i.fa.fa-clock-o
+        = @article.created_at.strftime("%A, %d %B %Y at %k:%M")
+      &nbsp;
+      - if @article.created_at != @article.updated_at
+        %i.fa.fa-edit
+          = @article.updated_at.strftime("%A, %d %B %Y at %k:%M")
+    %p
+      %i.fa.fa-users
+        = @article.impressionist_count(filter: :ip_address)
+        Viewers
+      &nbsp;
+      %i.fa.fa-eye
+        = @article.impressionist_count
+        Hits
+
+
+%hr
 = raw @article.text
