@@ -1,3 +1,4 @@
 blog:
   title: 'tuRBo'
   subtitle: 'the ultimate ruby blog :O'
+  url: "https://example.com"

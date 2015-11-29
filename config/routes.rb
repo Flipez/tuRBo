@@ -33,4 +33,6 @@ Rails.application.routes.draw do
   get '/admin/categories/new' => 'admin#category_new'
   post '/admin/categories/new' => 'admin#category_create'
   delete '/admin/categories/:id' => 'admin#category_destroy'
+
+  get 'feed' => 'articles#feed'
 end

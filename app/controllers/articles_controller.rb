@@ -21,6 +21,12 @@ class ArticlesController < ApplicationController
     redirect_to @article
   end
 
+  def feed
+    respond_to do |format|
+      format.rss { render :layout => false }
+    end
+  end
+
   private
     def article_params
       params.require(:article).permit(:title, :text)
