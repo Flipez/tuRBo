@@ -16,3 +16,12 @@
   %p
     You may find more information 
     %a{href: '/about'} here.
+.well
+  %h4 Blogroll
+  - @articles.each do |article|
+    %p
+      %a{href: "/articles/#{article.id}"}
+        = article.title
+        %span.badge.pull-right
+          = article.impressionist_count(filter: :ip_address)
+          visits

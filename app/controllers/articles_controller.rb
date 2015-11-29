@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   impressionist
   
   def index
-    @articles = Article.all
+    # @articles variable is load in application controller
   end
 
   def show
