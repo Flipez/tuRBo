@@ -4,11 +4,6 @@ class WelcomeController < ApplicationController
 
   def index
     @articles = Article.all
-    
-    @articles.each do |article|
-      impressionist(article)
-    end
-
     @categories = Category.all
   end
 end
