@@ -1,4 +1,5 @@
-environment 'development'
+environment 'production'
+#environment 'development'
 
 workers 2
 threads 1,6

@@ -20,14 +20,12 @@
             %span.icon-bar
             %span.icon-bar
           %a.navbar-brand{:href => "/"}
-            tuRBo
+            = Settings.blog.title
             %i.fa.fa-rocket.fa-fw
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           %ul.nav.navbar-nav
             %li
               %a{:href => "/users"} Authors
-            %li
-              %a{:href => "/categories"} Categories
             %li
               %a{:href => "/about"} About
             - if logged_in?
