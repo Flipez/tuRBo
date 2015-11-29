@@ -1,3 +1,4 @@
+![Flipez' Blog](slogan.png?raw=true "Flipez' Blog")
 # tuRBo
 This branch holds the slightly modified version of turbo used by flipez' blog.
 This branch will be removed when turbo is modular enough.
