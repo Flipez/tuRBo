@@ -1,0 +1,11 @@
+.row
+  .panel.panel-primary
+    .panel-heading
+      = I18n.t :admin_category_new_title
+    .panel-body
+      = form_for :category do |f|
+        .form-group
+          = f.label :name
+          = f.text_field :name, class: 'form-control'
+
+        = f.submit class: 'form-control'

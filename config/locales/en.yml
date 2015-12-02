@@ -25,3 +25,11 @@ en:
   sidebar_about_title: "About"
   sidebar_about_content: "This blog is built with Ruby on Rails, feeded by SQLite and fired up with Puma.
     If you like to improve our work, feel free to contribute to our GitHub repository"
+
+  admin_confirm_delete: "Do you really want to delete?"
+ 
+  admin_create_success: "Successfully created"
+  admin_delete_error: "Something went wrong. Did not delete"
+  admin_delete_success: "Successfully deleted object"
+  
+  admin_category_new_title: "Create a category"

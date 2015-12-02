@@ -28,6 +28,11 @@ Rails.application.routes.draw do
   get '/admin/articles/:id/edit' => 'admin#article_edit'
   post '/admin/articles/:id/edit' => 'admin#article_save'
 
+  get '/admin/categories' => 'admin#category_index'
+  get '/admin/categories/new' => 'admin#category_new'
+  post '/admin/categories/new' => 'admin#category_create'
+  delete '/admin/categories/:id' => 'admin#category_destroy'
+  
   get '/users/:id'  => 'user#show'
   
 end

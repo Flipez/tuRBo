@@ -1,5 +1,6 @@
 class Category < ActiveRecord::Base
 
-  has_and_belongs_to_many :articles
+  acts_as_taggable
+  acts_as_taggable_on :acticles
 
 end

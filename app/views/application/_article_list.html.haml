@@ -1,0 +1,13 @@
+- @articles.each do |article|
+  %h2
+    %a{href: "articles/#{article.id}"}
+      = article.title
+  %p
+    = raw article.text
+  %p.text-muted
+    by
+    %a{href: "/users/#{article.user.id}"}
+      = article.user.name
+    %span.fa.fa-clock-o
+      = article.created_at.strftime("on %a, %d %b %Y at %k:%M")
+  %hr

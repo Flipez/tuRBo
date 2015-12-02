@@ -1,7 +1,9 @@
 %h1.page-header
   = @user.name
 -@articles.each do |article|
-  =article.title
+  %h2
+    %a{href: "articles/#{article.id}"}
+      =article.title
   %br
   = truncate(sanitize(article.text, tags: []), length: 100)
   %hr

@@ -1,0 +1,24 @@
+.row
+  .panel.panel-primary
+    .panel-heading
+      Kategorien
+    .panel-body
+      %table.table.table-hover
+        %thead
+          %th.col-md-1
+          %th ID
+          %th Name
+        %tbody
+          - @categories.each do |category|
+            %tr
+              %td
+                %i.fa.fa-archive.fa-fw
+              %td= category.id
+              %td= category.name
+              %td
+                %a.btn.btn-danger{href: "categories/#{category.id}",
+                                  data: { method: :delete, 
+                                          confirm: I18n.t(:admin_confirm_delete)}}
+                  %i.fa.fa-trash-o
+  %a.btn.btn-primary{type: :button, href: 'categories/new'}
+    Neue Kategorie anlegen
