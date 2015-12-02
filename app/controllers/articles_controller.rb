@@ -1,7 +1,10 @@
 class ArticlesController < ApplicationController
   skip_before_filter :require_login
+
+  impressionist
+  
   def index
-    @articles = Article.all
+    # @articles variable is load in application controller
   end
 
   def show
@@ -16,6 +19,12 @@ class ArticlesController < ApplicationController
     @article.save
 
     redirect_to @article
+  end
+
+  def feed
+    respond_to do |format|
+      format.rss { render :layout => false }
+    end
   end
 
   private

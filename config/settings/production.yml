@@ -1,0 +1,12 @@
+blog:
+  title: "Flipez' Blog"
+  subtitle: "Linux & IT-Fan, Nerd, Supertüp"
+  url: &url "https://wingman.flipez.de"
+social:
+  rss: 
+    - *url
+    - /feed?format=rss
+  github: https://github.com/Flipez
+  steam: https://steamcommunity.com/id/flipez
+  flickr: https://flickr.com/photos/Flipez
+  mail: mailto:rm@flipez.net

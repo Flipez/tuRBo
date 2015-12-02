@@ -35,4 +35,6 @@ Rails.application.routes.draw do
   
   get '/users/:id'  => 'user#show'
   
+
+  get 'feed' => 'articles#feed'
 end

@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
 
 
   def set_variables
+    @articles = Article.all
     @categories = Category.all
   end
 
