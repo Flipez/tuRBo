@@ -24,3 +24,5 @@ de:
   sidebar_welcome_content: "Wenn ich dich mag, fühl' dich gegrüßt."
   sidebar_about_title: "Über"
   sidebar_about_content: "Der Blog wurde mit Ruby on Rails erstellt, mit SQLite gefüttert und mit Puma zum laufen gebracht. Wenn Du uns helfen möchtest kannst du gern unserem GitHub Repository beitragen."
+
+  article_category_title: "Kategorien: "
