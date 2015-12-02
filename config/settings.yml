@@ -1,4 +1,12 @@
 blog:
   title: 'tuRBo'
   subtitle: 'the ultimate ruby blog :O'
-  url: "https://example.com"
+  url: &url "https://example.com"
+social:
+  rss: 
+    - *url
+    - /feed?format=rss
+  github: https://github.com/<nick>
+  steam: https://steamcommunity.com/id/<nick>
+  flickr: https://flickr.com/photos/<nick>
+  mail: mailto:mail@example.com
