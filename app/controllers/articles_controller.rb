@@ -9,6 +9,11 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    @categories = []
+    categories = ActsAsTaggableOn::Tagging.includes(:tag).where(context: 'categories')
+    categories.map do |tagging| 
+      @categories <<  ActsAsTaggableOn::Tag.find(tagging.tag_id)
+    end.uniq
   end
 
   def new
@@ -29,6 +34,6 @@ class ArticlesController < ApplicationController
 
   private
     def article_params
-      params.require(:article).permit(:title, :text)
+      params.require(:article).permit(:title, :text, :tag_list)
     end
 end

@@ -19,7 +19,17 @@
       %i.fa.fa-eye
         = @article.impressionist_count
         Hits
+    %p
+      = I18n.t :article_category_title
+      = @categories.join ', '
+      
 
 
 %hr
 = raw @article.text
+%hr
+- @article.tag_list.each do |tag|
+  %a.badge{href: '#'}
+    = tag.to_s
+%hr
+
