@@ -1,6 +1,5 @@
 class ArticlesController < ApplicationController
   skip_before_filter :require_login
-
   impressionist
   
   def index
@@ -20,10 +19,6 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(article_params)
-    @article.save
-
-    redirect_to @article
   end
 
   def feed
