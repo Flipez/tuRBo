@@ -1,3 +1,5 @@
+#TODO: Split this up to subcontrollers
+
 class AdminController < ApplicationController
   
   before_filter :set_up_variables
@@ -34,6 +36,7 @@ class AdminController < ApplicationController
 
   def article_create
     @article = Article.new(article_params)
+    @article.categories << Category.find_by(id: article_params[:category_id].to_i)
     @article.user = User.first
     if @article.save
       flash[:success] = I18n.t :admin_create_success
@@ -56,6 +59,12 @@ class AdminController < ApplicationController
   def article_save
     @article = Article.find(params[:id])
     @article.update_attributes(article_params)
+    
+    category = Category.find_by(id: article_params[:category_id].to_i)
+    unless @article.categories.include? category
+      @article.categories << category
+    end
+    
     if @article.save
       flash[:success] = 'Article successfully updated'
       redirect_to "/admin/articles/#{@article.id}"
@@ -104,7 +113,7 @@ class AdminController < ApplicationController
     end
 
     def article_params
-      params.require(:article).permit(:title, :text)
+      params.require(:article).permit(:title, :text, :category_id)
     end
     
     def category_params

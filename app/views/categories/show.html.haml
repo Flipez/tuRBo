@@ -1,5 +1,5 @@
 .list-group
   - @articles.each do |article|
-    %a.list-group-item{href: "/articles/#{category.id}"}
+    %a.list-group-item{href: "/articles/#{article.id}"}
       %h4.list-group-item-heading= article.title
       %p.list-group-item-text= truncate(article.text)
