@@ -38,12 +38,21 @@ class AdminController < ApplicationController
     @article = Article.new(article_params)
     @article.categories << Category.find_by(id: article_params[:category_id].to_i)
     @article.user = User.first
-    if @article.save
-      flash[:success] = I18n.t :admin_create_success
+    if @article.valid? 
+      if @article.save
+        flash[:success] = I18n.t :admin_create_success
+      else
+        p @article.errors.each{|x| x.to_s}
+      end
+      redirect_to "/admin/articles/#{@article.id}"
     else
-      p @article.errors.each{|x| x.to_s}
+      errorlist = ""
+      @article.errors.each{|x| errorlist += (x.to_s + "<br>")}
+
+      flash[:error] = "Article invalid<br>#{errorlist}}"
+
+      render :article_new
     end
-    redirect_to "/admin/articles/#{@article.id}"
   end
   
   def article_destroy
