@@ -21,7 +21,9 @@
         Hits
     %p
       = I18n.t :article_category_title
-      = @categories.join ', '
+      - @categories.each do |category|
+        %a{href: "/categories/#{category.id}"}
+          = category.name
       
 
 

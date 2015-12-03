@@ -12,6 +12,9 @@
           = f.label :text
           = f.text_area :text, class: 'form-control wysihtml5',
                                value: @article.text
+        .form-group
+          = f.label :category
+          = f.collection_select :category_id, Category.all,:id,:name
 
         = f.submit class: 'form-control'
 :javascript
