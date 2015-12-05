@@ -1,6 +1,6 @@
 - @articles.each do |article|
   %h2
-    %a{href: "articles/#{article.id}"}
+    %a{href: "/articles/#{article.id}"}
       = article.title
   %p
     = raw article.text
