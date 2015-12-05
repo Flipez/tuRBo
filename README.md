@@ -1,4 +1,4 @@
-![Flipez' Blog](https://github.com/Flipez/tuRBo/blob/blog.flipez.de/slogan.png?raw=true "Flipez' Blog")
+![Flipez' Blog](slogan.png?raw=true "Flipez' Blog")
 
 [![Code Climate](https://codeclimate.com/github/Flipez/tuRBo/badges/gpa.svg)](https://codeclimate.com/github/Flipez/tuRBo)
 

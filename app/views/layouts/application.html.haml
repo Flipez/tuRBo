@@ -2,7 +2,7 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title tuRBo - the ultimate ruby blog
+    %title= "#{Settings.blog.title} - #{Settings.blog.subtitle}"
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css", :rel => "stylesheet"}/
     %link{:href => "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css", :rel => "stylesheet"}/
