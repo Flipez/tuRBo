@@ -6,7 +6,7 @@ class Article < ActiveRecord::Base
   
   acts_as_taggable
 
-  has_and_belongs_to_many :categories
+  belongs_to :category
 
   validates :title, presence: true, length: { minimum: 5 }
   validates :text, presence: true
