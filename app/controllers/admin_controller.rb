@@ -36,7 +36,6 @@ class AdminController < ApplicationController
 
   def article_create
     @article = Article.new(article_params)
-    @article.categories << Category.find_by(id: article_params[:category_id].to_i)
     @article.user = User.first
     if @article.valid? 
       if @article.save
@@ -68,11 +67,6 @@ class AdminController < ApplicationController
   def article_save
     @article = Article.find(params[:id])
     @article.update_attributes(article_params)
-    
-    category = Category.find_by(id: article_params[:category_id].to_i)
-    unless @article.categories.include? category
-      @article.categories << category
-    end
     
     if @article.save
       flash[:success] = 'Article successfully updated'
@@ -122,7 +116,7 @@ class AdminController < ApplicationController
     end
 
     def article_params
-      params.require(:article).permit(:title, :text, :category_id)
+      params.require(:article).permit(:title, :text, :category_id, :tag_list)
     end
     
     def category_params
