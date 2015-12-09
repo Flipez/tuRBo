@@ -14,6 +14,7 @@ gem "therubyracer"
 gem 'bootstrap-wysihtml5-rails'
 
 gem 'rails-i18n'
+gem "recaptcha", require: "recaptcha/rails"
 
 gem 'impressionist'
 gem 'acts-as-taggable-on'

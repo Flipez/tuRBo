@@ -44,6 +44,9 @@
       = f.label :text
       = f.text_area :text, class: 'form-control'
 
+    .form-group
+      = recaptcha_tags
+
     = f.submit class: 'form-control'
 %hr
 - @article.comments.each do |comment|

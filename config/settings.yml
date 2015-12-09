@@ -11,3 +11,6 @@ social:
   steam: https://steamcommunity.com/id/<nick>
   flickr: https://flickr.com/photos/<nick>
   mail: mailto:mail@example.com
+recaptcha:
+  pubkey: 6Lc6BAAAAAAAAChqRbQZcn_yyyyyyyyyyyyyyyyy
+  privkey: 6Lc6BAAAAAAAAKN3DRm6VA_xxxxxxxxxxxxxxxxx

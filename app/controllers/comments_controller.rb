@@ -4,14 +4,13 @@ class CommentsController < ApplicationController
   def create
     article = Article.find(params[:id])
     comment = Comment.new(comment_params)
-    if comment.valid?
-      if comment.save
-        flash[:success] = I18n.t :comment_create_success
-        article.comments << comment
-        article.save!
-      else
-        flash[:danger] = I18n.t :comment_create_error
-      end
+    p article
+    if comment.valid? && verify_recaptcha(model: comment) && comment.save
+      flash[:success] = I18n.t :comment_create_success
+      article.comments << comment
+      article.save!
+    else
+      flash[:danger] = I18n.t :comment_create_error
     end
     redirect_to :back
   end
