@@ -32,4 +32,5 @@ en:
   admin_delete_error: "Something went wrong. Did not delete"
   admin_delete_success: "Successfully deleted object"
   
+  article_category_title: "Categories: "
   admin_category_new_title: "Create a category"
