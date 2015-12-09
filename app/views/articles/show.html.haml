@@ -21,10 +21,8 @@
         Hits
     %p
       = I18n.t :article_category_title
-      - @categories.each do |category|
-        %a{href: "/categories/#{category.id}"}
-          = category.name
-      
+      %a.label.label-primary{href: "/categories/#{@article.category.id}"}
+        = @article.category.name 
 
 
 %hr

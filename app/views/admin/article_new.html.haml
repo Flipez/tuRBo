@@ -15,7 +15,10 @@
         .form-group
           = f.label :category
           = f.collection_select :category_id, Category.all,:id,:name
-            
+
+        .form-group
+          = f.label :tag_list
+          = f.text_field :tag_list, class: 'form-control'
 
         = f.submit class: 'form-control'
 :javascript

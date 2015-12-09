@@ -14,8 +14,13 @@
                                value: @article.text
         .form-group
           = f.label :category
-          = f.collection_select :category_id, Category.all,:id,:name
+          = f.collection_select :category_id, Category.all,:id,:name, {selected: @article.category.id}
 
+        .form-group
+          = f.label :tag_list
+          = f.text_field :tag_list, class: 'form-control',
+                                    value: @article.tag_list.join(", ")
+        
         = f.submit class: 'form-control'
 :javascript
   $(document).ready(function(){
