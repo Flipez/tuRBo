@@ -14,7 +14,11 @@
                                value: @article.text
         .form-group
           = f.label :category
-          = f.collection_select :category_id, Category.all,:id,:name, {selected: @article.category.id}
+          = f.collection_select :category_id, 
+                                Category.all,
+                                :id,
+                                :name, 
+                                {selected: @article.category.id if @article.category}
 
         .form-group
           = f.label :tag_list

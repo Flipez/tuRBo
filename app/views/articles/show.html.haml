@@ -19,10 +19,11 @@
       %i.fa.fa-eye
         = @article.impressionist_count
         Hits
-    %p
-      = I18n.t :article_category_title
-      %a.label.label-primary{href: "/categories/#{@article.category.id}"}
-        = @article.category.name 
+    - if @article.category
+      %p
+        = I18n.t :article_category_title
+        %a.label.label-primary{href: "/categories/#{@article.category.id}"}
+          = @article.category.name 
 
 
 %hr
