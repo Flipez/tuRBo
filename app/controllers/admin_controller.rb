@@ -67,7 +67,7 @@ class AdminController < ApplicationController
       flash[:success] = 'Article successfully updated'
       redirect_to "/admin/articles/#{@article.id}"
     else
-      flash[:error] = @article.errors.join('<br />').html_safe
+      flash[:danger] = @article.errors.join('<br />').html_safe
       redirect_to :back
     end
   end
@@ -98,7 +98,7 @@ class AdminController < ApplicationController
     @category = Category.find(params[:id])
     @category.destroy
     if Category.where(id: params[:id]).any?
-      flash[:error] = I18n.t :admin_delete_error
+      flash[:danger] = I18n.t :admin_delete_error
     else
       flash[:success] = I18n.t :admin_delete_success
     end
