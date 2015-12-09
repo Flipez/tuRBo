@@ -39,11 +39,11 @@
             - else
               %li
                 = link_to "Log In", login_path  
-    - flash.each do |message_type, message|
-      %div{class: "alert alert-#{message_type}"}= message
     .container
       .row
         .col-md-8
+          - flash.each do |message_type, message|
+            %div{class: "alert alert-#{message_type}"}= message
           = yield
         .col-md-4
           = render partial: 'sidebar'
