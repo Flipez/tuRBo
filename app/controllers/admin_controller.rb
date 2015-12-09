@@ -49,7 +49,7 @@ class AdminController < ApplicationController
       errorlist = ""
       @article.errors.each{|x| errorlist += (x.to_s + "<br>")}
 
-      flash[:error] = "Article invalid<br>#{errorlist}}"
+      flash[:error] = "Article invalid<br>#{errorlist}}".html_safe
 
       render :article_new
     end
