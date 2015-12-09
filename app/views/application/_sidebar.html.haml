@@ -29,3 +29,11 @@
         %span.badge.pull-right
           = article.impressionist_count(filter: :ip_address)
           visits
+.well
+  %h4
+    %i.fa.fa-tags
+    The ten most used tags
+  - @most_used_tags.each do |tag|
+    %span.badge
+      = tag.name
+

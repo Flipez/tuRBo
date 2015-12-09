@@ -49,10 +49,12 @@
 
     = f.submit class: 'form-control'
 %hr
-- @article.comments.each do |comment|
-  .media
-    .media-body
-      %h4.media-heading
-        = comment.title
-        %small= comment.created_at
-      = comment.text
+.list-group
+  - @article.comments.each do |comment|
+    .list-group-item
+      .media
+        .media-body
+          %h4.media-heading
+            = comment.title
+            %small= comment.created_at
+          = comment.text

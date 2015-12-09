@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
   def set_variables
     @articles = Article.all
     @categories = Category.all
+    @most_used_tags = ActsAsTaggableOn::Tag.most_used(10)
   end
 
   private
