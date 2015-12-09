@@ -46,6 +46,10 @@ social:
   mail: mailto:rm@flipez.net
 ```
 
+### Recaptcha
+We are using Googles recaptcha to avoid automated comments. In order to use this service you have to get your api keys from Google and paste them into the `config/settings/production.yml` (and development if you wish) as shown in `config/settings.yml`.
+[obtain a reCAPTCHA API key](https://www.google.com/recaptcha/admin).
+
 ### Localization
 You should have an idea what kind of settings you can adjust there, for localization you might take a look into `config/locales/`
 There you can adjust the most of the strings found all over the views. You can change the default locale in `config/application.rb` with the `config.i18n.default_locale`attribut. Default is `:de`
