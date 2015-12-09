@@ -37,19 +37,14 @@ class AdminController < ApplicationController
   def article_create
     @article = Article.new(article_params)
     @article.user = User.first
-    if @article.valid? 
-      if @article.save
-        flash[:success] = I18n.t :admin_create_success
-      else
-        p @article.errors.each{|x| x.to_s}
-      end
+    if @article.valid? && @article.save 
+      flash[:success] = I18n.t :admin_create_success
       redirect_to "/admin/articles/#{@article.id}"
     else
+      p @article.errors.each{|x| x.to_s}
       errorlist = ""
-      @article.errors.each{|x| errorlist += (x.to_s + "<br>")}
-
-      flash[:error] = "Article invalid<br>#{errorlist}}"
-
+      @article.errors.each{|k,v| errorlist += (k.to_s + " " + v.to_s + "<br />")}
+      flash[:danger] = "Article invalid<br />#{errorlist}".html_safe
       render :article_new
     end
   end
@@ -72,7 +67,7 @@ class AdminController < ApplicationController
       flash[:success] = 'Article successfully updated'
       redirect_to "/admin/articles/#{@article.id}"
     else
-      flash[:error] = @article.errors.join('<br />')
+      flash[:danger] = @article.errors.join('<br />').html_safe
       redirect_to :back
     end
   end
@@ -103,7 +98,7 @@ class AdminController < ApplicationController
     @category = Category.find(params[:id])
     @category.destroy
     if Category.where(id: params[:id]).any?
-      flash[:error] = I18n.t :admin_delete_error
+      flash[:danger] = I18n.t :admin_delete_error
     else
       flash[:success] = I18n.t :admin_delete_success
     end
