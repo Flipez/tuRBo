@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get '/about' => 'about#index'
   
   resources :articles
+  post '/articles/:id' => 'comments#create'
+  
   resources :categories
 
   resources :users

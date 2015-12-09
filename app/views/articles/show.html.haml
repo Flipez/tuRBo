@@ -32,4 +32,23 @@
   %a.badge{href: '#'}
     = tag.to_s
 %hr
+.well
+  %h4 Leave a Comment:
+  = form_for :comment do |f|
+    .form-group
+      = f.label :title
+      = f.text_field :title, class: 'form-control'
 
+    .form-group
+      = f.label :text
+      = f.text_area :text, class: 'form-control'
+
+    = f.submit class: 'form-control'
+%hr
+- @article.comments.each do |comment|
+  .media
+    .media-body
+      %h4.media-heading
+        = comment.title
+        %small= comment.created_at
+      = comment.text
