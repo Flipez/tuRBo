@@ -21,7 +21,7 @@
         Hits
     - if @article.category
       %p
-        = I18n.t :article_category_title
+        = I18n.t 'article.category.title'
         %a.label.label-primary{href: "/categories/#{@article.category.id}"}
           = @article.category.name 
 

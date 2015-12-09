@@ -20,16 +20,34 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 de:
-  sidebar_welcome_title: "Willkommen"
-  sidebar_welcome_content: "Wenn ich dich mag, fühl' dich gegrüßt."
-  sidebar_about_title: "Über"
-  sidebar_about_content: "Der Blog wurde mit Ruby on Rails erstellt, mit SQLite gefüttert und mit Puma zum laufen gebracht. Wenn Du uns helfen möchtest kannst du gern unserem GitHub Repository beitragen."
+  comment:
+    create:
+      success: 'Kommentar erfolgreich angelegt'
+      error: 'Kommentar konnte nicht erstellt werden'
+
+  sidebar:
+    welcome:
+      title: "Willkommen"
+      content: "Wenn ich dich mag, fühl' dich gegrüßt."
+    about:
+      title: "Über"
+      content: "Der Blog wurde mit Ruby on Rails erstellt, mit SQLite gefüttert und mit Puma zum laufen gebracht. Wenn Du uns helfen möchtest kannst du gern unserem GitHub Repository beitragen."
   
-  admin_confirm_delete: "Möchtest du das wirklich löschen?"
+  admin:
+    confirm:
+      delete: "Möchtest du das wirklich löschen?"
  
-  admin_create_success: "Erfolgreich erstellt"
-  admin_delete_error: "Irgendwas lief schief. Habe nichts gelöscht"
-  admin_delete_success: "Objekt erfolgreich gelöscht"
+    create:
+      success: "Erfolgreich erstellt"
   
-  article_category_title: "Kategorien: "
-  admin_category_new_title: "Kategorie erstellen"
+    delete:
+      error: "Irgendwas lief schief. Habe nichts gelöscht"
+      success: "Objekt erfolgreich gelöscht"
+ 
+    category:
+      new:
+        title: "Neue Kategorie anlegen"
+
+  article:
+    category:
+      title: "Kategorien: "

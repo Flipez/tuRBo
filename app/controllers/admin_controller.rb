@@ -38,7 +38,7 @@ class AdminController < ApplicationController
     @article = Article.new(article_params)
     @article.user = User.first
     if @article.valid? && @article.save 
-      flash[:success] = I18n.t :admin_create_success
+      flash[:success] = I18n.t 'admin.create.success'
       redirect_to "/admin/articles/#{@article.id}"
     else
       p @article.errors.each{|x| x.to_s}
@@ -87,7 +87,7 @@ class AdminController < ApplicationController
   def category_create
     @category = Category.new(category_params)
     if @category.save
-      flash[:success] = I18n.t :admin_create_success
+      flash[:success] = I18n.t 'admin.create.success'
     else
       p @category.errors.each{|x| x.to_s}
     end
@@ -98,9 +98,9 @@ class AdminController < ApplicationController
     @category = Category.find(params[:id])
     @category.destroy
     if Category.where(id: params[:id]).any?
-      flash[:danger] = I18n.t :admin_delete_error
+      flash[:danger] = I18n.t 'admin.delete.error'
     else
-      flash[:success] = I18n.t :admin_delete_success
+      flash[:success] = I18n.t 'admin.delete.success'
     end
     redirect_to :back
   end

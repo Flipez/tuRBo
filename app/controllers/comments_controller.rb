@@ -6,11 +6,11 @@ class CommentsController < ApplicationController
     comment = Comment.new(comment_params)
     p article
     if comment.valid? && verify_recaptcha(model: comment) && comment.save
-      flash[:success] = I18n.t :comment_create_success
+      flash[:success] = I18n.t 'comment.create.success'
       article.comments << comment
       article.save!
     else
-      flash[:danger] = I18n.t :comment_create_error
+      flash[:danger] = I18n.t 'comment.create.error'
     end
     redirect_to :back
   end

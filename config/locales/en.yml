@@ -20,17 +20,35 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  sidebar_welcome_title: "Welcome"
-  sidebar_welcome_content: "If I like you, you may be warm welcomed here"
-  sidebar_about_title: "About"
-  sidebar_about_content: "This blog is built with Ruby on Rails, feeded by SQLite and fired up with Puma.
-    If you like to improve our work, feel free to contribute to our GitHub repository"
+  comment:
+    create:
+      success: 'Comment created successfully'
+      error: 'Comment could not be created'
 
-  admin_confirm_delete: "Do you really want to delete?"
+  sidebar:
+    welcome:
+      title: "Welcome"
+      content: "If I like you, you may be warm welcomed here"
+    about:
+      title: "About"
+      content: "This blog is built with Ruby on Rails, feeded by SQLite and fired up with Puma.
+                If you like to improve our work, feel free to contribute to our GitHub repository"
+
+  admin:
+    confirm:
+      delete: "Do you really want to delete?"
  
-  admin_create_success: "Successfully created"
-  admin_delete_error: "Something went wrong. Did not delete"
-  admin_delete_success: "Successfully deleted object"
+    create:
+      success: "Successfully created"
   
-  article_category_title: "Categories: "
-  admin_category_new_title: "Create a category"
+    delete:
+      error: "Something went wrong. Did not delete"
+      success: "Successfully deleted object"
+  
+    category:
+      new:
+        title: "Create a new category"
+
+  article:
+    category:
+      title: "Categories: "
