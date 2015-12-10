@@ -1,0 +1,15 @@
+.row
+  .panel.panel-primary
+    .panel-heading
+      User bearbeiten
+    .panel-body
+      = form_for :user do |f|
+        .form-group
+          = f.label :name
+          = f.text_field :name, class: 'form-control', value: @user.name
+
+        .form-group
+          = f.label :password
+          = f.password_field :password, class: 'form-control'
+        
+        = f.submit class: 'form-control'

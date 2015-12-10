@@ -22,6 +22,9 @@ Rails.application.routes.draw do
   get '/admin/users' => 'admin#user_index'
   get '/admin/users/new' => 'admin#user_new'
   post '/admin/users/new' => 'admin#user_create'
+  delete '/admin/users/:id' => 'admin#user_destroy'
+  get '/admin/users/:id/edit' => 'admin#user_edit'
+  post '/admin/users/:id/edit' => 'admin#user_save'
 
   get '/admin/articles' => 'admin#article_index'
   get '/admin/articles/new' => 'admin#article_new'
