@@ -2,7 +2,7 @@ blog:
   title: 'tuRBo'
   subtitle: 'the ultimate ruby blog :O'
   url: &url "https://example.com"
-  version: 0.9.2 beta
+  version: 0.9.4 beta
 social:
   rss: 
     - *url
