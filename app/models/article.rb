@@ -9,7 +9,6 @@ class Article < ActiveRecord::Base
   
   acts_as_taggable
 
-  validates :category, presence: true
   validates :title, presence: true, length: { minimum: 5 }
   validates :text, presence: true
   validates :user, presence: true
