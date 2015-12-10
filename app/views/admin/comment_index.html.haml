@@ -1,0 +1,22 @@
+.row
+  .panel.panel-primary
+    .panel-heading
+      Kommentare
+    .panel-body
+      %table.table.table-hover
+        %thead
+          %th.col-md-1
+          %th ID
+          %th Text
+        %tbody
+          - @comments.each do |comment|
+            %tr
+              %td
+                %i.fa.fa-archive.fa-fw
+              %td= comment.id
+              %td= comment.text
+              %td
+                %a.btn.btn-danger{href: "comments/#{comment.id}",
+                                  data: { method: :delete, 
+                                          confirm: I18n.t('admin.confirm.delete')}}
+                  %i.fa.fa-trash-o

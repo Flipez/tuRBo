@@ -36,6 +36,9 @@ Rails.application.routes.draw do
   post '/admin/categories/new' => 'admin#category_create'
   delete '/admin/categories/:id' => 'admin#category_destroy'
   
+  get '/admin/comments' => 'admin#comment_index'
+  delete '/admin/comments/:id' => 'admin#comment_destroy'
+  
   get '/users/:id'  => 'user#show'
   
 
