@@ -34,6 +34,7 @@
     %i.fa.fa-tags
     The ten most used tags
   - @most_used_tags.each do |tag|
-    %span.badge
-      = tag.name
+    %a{href: "/articles/tags/#{tag.name}"}
+      %span.badge
+        = tag.name
 

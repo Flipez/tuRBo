@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   
   resources :articles
   post '/articles/:id' => 'comments#create'
+  get '/articles/tags/:tag' => 'articles#tags'
   
   resources :categories
 

@@ -16,6 +16,11 @@ class ArticlesController < ApplicationController
   def create
   end
 
+  def tags
+    @articles = Article.tagged_with(params[:tag])
+    @tag = params[:tag]
+  end
+
   def feed
     respond_to do |format|
       format.rss { render :layout => false }

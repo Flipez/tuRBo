@@ -30,7 +30,7 @@
 = raw @article.text
 %hr
 - @article.tag_list.each do |tag|
-  %a.badge{href: '#'}
+  %a.badge{href: "/articles/tags/#{tag}"}
     = tag.to_s
 %hr
 .well
