@@ -16,7 +16,6 @@
             %span.pull-right
               %i.fa.fa-arrow-circle-right
             .clearfix
-    .col-lg-4.col-md-6
       .panel.panel-success
         .panel-heading
           .row
@@ -32,7 +31,6 @@
             %span.pull-right
               %i.fa.fa-arrow-circle-right
             .clearfix
-    .col-lg-4.col-md-6
       .panel.panel-warning
         .panel-heading
           .row
@@ -48,4 +46,42 @@
             %span.pull-right
               %i.fa.fa-arrow-circle-right
             .clearfix
-/ /.row
+    .col-lg-4.col-md-6
+      %table.table.table-bordered
+        %tr
+          %th.col-md-2
+          %th.col-md-5
+        %tr
+          %td
+            %i.fa.fa-clock-o
+            Uptime
+          %td= @uptime
+        %tr
+          %td
+            %i.fa.fa-rocket
+            tuRBo Version
+          %td= Settings.blog.version
+        %tr
+          %td 
+            %i.devicons.devicons-ruby_on_rails
+            Rails Version
+          %td= Rails::VERSION::STRING
+        %tr
+          %td 
+            %i.devicons.devicons-ruby
+            Ruby Version
+          %td= RUBY_VERSION
+        %tr
+          %td
+            %i.devicons.devicons-ruby_rough
+            Loaded Gems
+            = "(#{@gems.count})"
+          %td
+            %button.btn.bt-info{data: {toggle: :collapse, target: '#gems'}}
+              Show Gemlist
+            .collapse#gems
+              %ul
+                - @gems.sort.each do |gem,version|
+                  %li
+                    %b= gem
+                    = "(#{version})"

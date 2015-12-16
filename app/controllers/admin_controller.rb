@@ -1,3 +1,5 @@
+include ActionView::Helpers::DateHelper
+
 #TODO: Split this up to subcontrollers
 
 class AdminController < ApplicationController
@@ -11,6 +13,12 @@ class AdminController < ApplicationController
   end
   
   def index
+    @uptime = time_ago_in_words(Blog::BOOTET_AT)
+
+    @gems = {}
+    Bundler.load.specs.map do |spec| 
+      @gems[spec.name] = spec.version.to_s
+    end
   end
 
   # Actions for User handling in admin panel
