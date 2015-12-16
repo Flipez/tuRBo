@@ -8,6 +8,12 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_variables
 
+  before_filter :set_start_time
+
+  def set_start_time
+    @start_time = Time.now.to_f
+  end
+
 
   def set_variables
     @articles = Article.all

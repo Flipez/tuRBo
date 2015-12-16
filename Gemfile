@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'rack-mini-profiler'
 
 gem 'rails', '4.2.3'
 gem 'sqlite3'

@@ -68,6 +68,10 @@
                 and
                 %a{href: 'https://github.com/Nyomancer'}
                   Nyomancer
+                %small.text-muted
+                  rendered in
+                  = ((Time.now.to_f - @start_time) * 1000).round(2)
+                  ms
             .col-lg-3
               %p.pull-right
                 Made without PHP and MySQL.
