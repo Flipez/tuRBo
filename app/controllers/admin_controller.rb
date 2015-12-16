@@ -19,6 +19,7 @@ class AdminController < ApplicationController
     Bundler.load.specs.map do |spec| 
       @gems[spec.name] = spec.version.to_s
     end
+    @outdated = Gem::Specification.outdated
   end
 
   # Actions for User handling in admin panel

@@ -65,7 +65,12 @@
           %td 
             %i.devicons.devicons-ruby_on_rails
             Rails Version
-          %td= Rails::VERSION::STRING
+          %td
+            = Rails::VERSION::STRING
+            - if @outdated.include? 'rails'
+              %span.label.label-danger
+                Outdated
+
         %tr
           %td 
             %i.devicons.devicons-ruby
@@ -77,11 +82,21 @@
             Loaded Gems
             = "(#{@gems.count})"
           %td
-            %button.btn.bt-info{data: {toggle: :collapse, target: '#gems'}}
+            %button.btn.bt-primary{data: {toggle: :collapse, target: '#gems'}}
               Show Gemlist
+              %span.badge
+                = @outdated.count
+                outdated gems
             .collapse#gems
-              %ul
+              %table.table
                 - @gems.sort.each do |gem,version|
-                  %li
-                    %b= gem
-                    = "(#{version})"
+                  %tr
+                    %th= gem
+                    %td=version
+                    %td
+                      - if @outdated.include? gem.to_s
+                        %span.label.label-danger
+                          Outdated
+                      - else
+                        %span.label.label-success
+                          Up to date
