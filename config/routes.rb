@@ -3,10 +3,8 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
 
-  get '/admin' => 'admin#index'
 
   get 'welcome/index'
-
   root 'welcome#index'
   
   get '/about' => 'about#index'
@@ -18,31 +16,38 @@ Rails.application.routes.draw do
   resources :categories
 
   resources :users
-
-  get '/admin/users' => 'admin#user_index'
-  get '/admin/users/new' => 'admin#user_new'
-  post '/admin/users/new' => 'admin#user_create'
-  delete '/admin/users/:id' => 'admin#user_destroy'
-  get '/admin/users/:id/edit' => 'admin#user_edit'
-  post '/admin/users/:id/edit' => 'admin#user_save'
-
-  get '/admin/articles' => 'admin#article_index'
-  get '/admin/articles/new' => 'admin#article_new'
-  post '/admin/articles/new' => 'admin#article_create'
-  get '/admin/articles/:id' => 'admin#article_show'
-  delete '/admin/articles/:id' => 'admin#article_destroy'
-  get '/admin/articles/:id/edit' => 'admin#article_edit'
-  post '/admin/articles/:id/edit' => 'admin#article_save'
-
-  get '/admin/categories' => 'admin#category_index'
-  get '/admin/categories/new' => 'admin#category_new'
-  post '/admin/categories/new' => 'admin#category_create'
-  delete '/admin/categories/:id' => 'admin#category_destroy'
-  
-  get '/admin/comments' => 'admin#comment_index'
-  delete '/admin/comments/:id' => 'admin#comment_destroy'
-  
   get '/users/:id'  => 'user#show'
+
+  namespace :admin do
+
+    get '' => 'index#index'
+    
+    get 'articles' => 'articles#index'
+    get 'articles/new' => 'articles#new'
+    post 'articles/new' => 'articles#create'
+    get 'articles/:id' => 'articles#show'
+    delete 'articles/:id' => 'articles#destroy'
+    get 'articles/:id/edit' => 'articles#edit'
+    post 'articles/:id/edit' => 'articles#save'
+
+    get 'users' => 'users#index'
+    get 'users/new' => 'users#new'
+    post 'users/new' => 'users#create'
+    delete 'users/:id' => 'users#destroy'
+    get 'users/:id/edit' => 'users#edit'
+    post 'users/:id/edit' => 'users#save'
+
+    get 'categories' => 'categories#index'
+    get 'categories/new' => 'categories#new'
+    post 'categories/new' => 'categories#create'
+    delete 'categories/:id' => 'categories#destroy'
+    
+    get 'comments' => 'comments#index'
+    delete 'comments/:id' => 'comments#destroy'
+  
+
+  end
+
   
 
   get 'feed' => 'articles#feed'
