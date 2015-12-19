@@ -20,6 +20,14 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 de:
+  errors:
+    '404':
+      title: '404 Seite nicht gefunden'
+      content: 'Benutze die Sidebar um Inhalte zu finden die du suchst'
+    '500':
+      title: '500 ..kaputt'
+      content: 'Irgendetwas hat da nicht funktioniert. Schau in die Logs wenn du der Betreiber des Blogs bist oder versuche es einfach noch mal.'
+  
   comment:
     create:
       success: 'Kommentar erfolgreich angelegt'

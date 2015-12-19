@@ -20,6 +20,14 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  errors:
+    404:
+      title: '404 Site not found'
+      content: 'Try to use the sidebar to find the resource you are looking for'
+    '500':
+      title: '500 ..broken'
+      content: 'Something went slightly wrong. If you are the owner you might want to look in the logs. Otherwise just try it again'
+  
   comment:
     create:
       success: 'Comment created successfully'
