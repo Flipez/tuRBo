@@ -3,17 +3,10 @@ class ArticlesController < ApplicationController
   impressionist
   
   def index
-    # @articles variable is load in application controller
   end
 
   def show
     @article = Article.find(params[:id])
-  end
-
-  def new
-  end
-
-  def create
   end
 
   def tags
@@ -27,8 +20,4 @@ class ArticlesController < ApplicationController
     end
   end
 
-  private
-    def article_params
-      params.require(:article).permit(:title, :text, :tag_list)
-    end
 end

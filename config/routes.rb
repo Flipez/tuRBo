@@ -3,20 +3,20 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
 
+  get '/about' => 'about#index'
 
   get 'welcome/index'
   root 'welcome#index'
   
-  get '/about' => 'about#index'
   
-  resources :articles
-  post '/articles/:id' => 'comments#create'
-  get '/articles/tags/:tag' => 'articles#tags'
+  get 'articles/:id' => 'articles#show', as: :article 
+  post 'articles/:id' => 'comments#create'
+  get 'articles/tags/:tag' => 'articles#tags'
   
-  resources :categories
+  get 'categories/:id' => 'categories#show', as: :category
 
-  resources :users
-  get '/users/:id'  => 'user#show'
+  get 'users' => 'users#index'
+  get 'users/:id'  => 'users#show', as: :user
 
   namespace :admin do
 
@@ -24,10 +24,10 @@ Rails.application.routes.draw do
     
     get 'articles' => 'articles#index'
     get 'articles/new' => 'articles#new'
-    post 'articles/new' => 'articles#create'
     get 'articles/:id' => 'articles#show'
     delete 'articles/:id' => 'articles#destroy'
     get 'articles/:id/edit' => 'articles#edit'
+    post 'articles/new' => 'articles#create'
     post 'articles/:id/edit' => 'articles#save'
 
     get 'users' => 'users#index'
