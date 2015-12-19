@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'sidekiq'
+gem 'redis-rails'
+
 gem 'rack-mini-profiler'
 
 gem 'rails', '4.2.3'

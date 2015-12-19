@@ -58,6 +58,11 @@
           %td= @uptime
         %tr
           %td
+            %i.fa.fa-clock-o
+            Last update check
+          %td= @last_gem_check || 'No check yet'
+        %tr
+          %td
             %i.fa.fa-rocket
             tuRBo Version
           %td= Settings.blog.version
@@ -67,7 +72,7 @@
             Rails Version
           %td
             = Rails::VERSION::STRING
-            - if @outdated.include? 'rails'
+            - if @outdated_gems.include? 'rails'
               %span.label.label-danger
                 Outdated
 
@@ -84,9 +89,10 @@
           %td
             %button.btn.bt-primary{data: {toggle: :collapse, target: '#gems'}}
               Show Gemlist
-              %span.badge
-                = @outdated.count
-                outdated gems
+              -if @outdated_gems
+                %span.badge
+                  = @outdated_gems.count
+                  outdated gems
             .collapse#gems
               %table.table
                 - @gems.sort.each do |gem,version|
@@ -94,7 +100,7 @@
                     %th= gem
                     %td=version
                     %td
-                      - if @outdated.include? gem.to_s
+                      - if @outdated_gems.to_a.include? gem.to_s
                         %span.label.label-danger
                           Outdated
                       - else
