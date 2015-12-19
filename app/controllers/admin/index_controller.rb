@@ -1,3 +1,5 @@
+include ActionView::Helpers::DateHelper
+
 class Admin::IndexController < AdminController
   
   def index
