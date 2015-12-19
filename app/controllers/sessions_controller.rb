@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
         #dinge
         log_in user
-        redirect_to controller: :admin, action: :index
+        redirect_to controller: 'admin/index', action: :index
     else
         flash.now[:danger] = 'Invalid username/password combination' 
         render 'new'
