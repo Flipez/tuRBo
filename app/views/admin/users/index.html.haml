@@ -8,6 +8,7 @@
           %th.col-md-1
           %th ID
           %th Name
+          %th
         %tbody
           - @users.each do |user|
             %tr
@@ -16,12 +17,12 @@
               %td= user.id
               %td= user.name
               %td
-                %a.btn.btn-warning{href: "users/#{user.id}/edit"}
-                  %i.fa.fa-edit
-              %td
-                %a.btn.btn-danger{href: "users/#{user.id}",
-                                  data: { method: :delete, 
-                                          confirm: I18n.t('admin.confirm.delete')}}
-                  %i.fa.fa-trash-o
+                .btn-group
+                  %a.btn.btn-warning{href: "users/#{user.id}/edit"}
+                    %i.fa.fa-edit
+                  %a.btn.btn-danger{href: "users/#{user.id}",
+                                    data: { method: :delete, 
+                                            confirm: I18n.t('admin.confirm.delete')}}
+                    %i.fa.fa-trash-o
   %a.btn.btn-primary{type: :button, href: 'users/new'}
     Neuen Benutzer anlegen

@@ -11,8 +11,6 @@
           %th Datum
           %th Zuletzt bearbeitet
           %th
-          %th
-          %th
 
         %tbody
           - @articles.each do |article|
@@ -26,16 +24,15 @@
               %td= article.created_at
               %td= article.updated_at
               %td
-                %a.btn.btn-success{href: "/articles/#{article.id}"}
-                  %i.fa.fa-eye
-              %td
-                %a.btn.btn-warning{href: "articles/#{article.id}/edit"}
-                  %i.fa.fa-edit
-              %td
-                %a.btn.btn-danger{href: "articles/#{article.id}",
-                                  data: { method: :delete, 
-                                          confirm: 'Wirklich löschen?'}}
-                  %i.fa.fa-trash-o
+                .btn-group
+                  %a.btn.btn-success{href: "/articles/#{article.id}"}
+                    %i.fa.fa-eye
+                  %a.btn.btn-warning{href: "articles/#{article.id}/edit"}
+                    %i.fa.fa-edit
+                  %a.btn.btn-danger{href: "articles/#{article.id}",
+                                    data: { method: :delete, 
+                                            confirm: 'Wirklich löschen?'}}
+                    %i.fa.fa-trash-o
 
   %a.btn.btn-primary{type: :button, href: 'articles/new'}
     Neuen Artikel anlegen
