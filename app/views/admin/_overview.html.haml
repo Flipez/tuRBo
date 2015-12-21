@@ -1,73 +1,71 @@
 .row{style: 'padding-top: 50px'}
   .col-lg-12
     .col-lg-4.col-md-6
-      .panel.panel-info
-        .panel-heading
-          .row
-            .col-xs-3
-              %i.fa.fa-users.fa-5x
-            .col-xs-9.text-right
-              .huge
-                = @users.count
-              %div Registrierte Benutzer
-        %a{:href => "/admin/users"}
-          .panel-footer
+      .card.card-inverse.card-info
+        .card-block.bg-info
+          .rotate
+            %i.fa.fa-users.fa-5x
+          .text-uppercase
+            Registrierte Benutzer
+          .display-1
+            = @users.count
+        .card-footer
+          %a{:href => "/admin/users"}
             %span.pull-left Erfahre mehr
             %span.pull-right
               %i.fa.fa-arrow-circle-right
             .clearfix
-      .panel.panel-success
-        .panel-heading
-          .row
-            .col-xs-3
-              %i.fa.fa-file.fa-5x
-            .col-xs-9.text-right
-              .huge
-                = @articles.count
-              %div Artikel insgesamt
-        %a{:href => "/admin/articles"}
-          .panel-footer
+      .card.card-inverse.card-success
+        .card-block.bg-success
+          .rotate
+            %i.fa.fa-file.fa-5x
+          .text-uppercase
+            Artikel insgesamt
+          .display-1
+            = @articles.count
+        .card-footer
+          %a{:href => "/admin/articles"}
             %span.pull-left Erfahre mehr
             %span.pull-right
               %i.fa.fa-arrow-circle-right
             .clearfix
-      .panel.panel-warning
-        .panel-heading
-          .row
-            .col-xs-3
-              %i.fa.fa-archive.fa-5x
-            .col-xs-9.text-right
-              .huge
-                = @categories.count
-              %div Kategorien insgesamt
-        %a{:href => "/admin/categories"}
-          .panel-footer
+      .card.card-inverse.card-warning
+        .card-block.bg-warning
+          .rotate
+            %i.fa.fa-archive.fa-5x
+          .text-uppercase
+            Kategorien insgesamt
+          .display-1
+            = @categories.count
+        .card-footer
+          %a{:href => "/admin/categories"}
             %span.pull-left Erfahre mehr
             %span.pull-right
               %i.fa.fa-arrow-circle-right
             .clearfix
-    .col-lg-4.col-md-6
+    .col-lg-8.col-md-6
       %table.table.table-bordered
+        %thead.thead-default
+          %tr
+            %th &nbsp;
+            %th Version
         %tr
-          %th.col-md-2
-          %th.col-md-5
-        %tr
-          %td
+          %th
             %i.fa.fa-clock-o
             Uptime
           %td= @uptime
         %tr
-          %td
+          %th
             %i.fa.fa-clock-o
             Last update check
           %td= @last_gem_check || 'No check yet'
         %tr
-          %td
+          %th
             %i.fa.fa-rocket
             tuRBo Version
           %td= Settings.blog.version
         %tr
-          %td 
+          %th 
             %i.devicons.devicons-ruby_on_rails
             Rails Version
           %td
@@ -77,12 +75,12 @@
                 Outdated
 
         %tr
-          %td 
+          %th 
             %i.devicons.devicons-ruby
             Ruby Version
           %td= RUBY_VERSION
         %tr
-          %td
+          %th
             %i.devicons.devicons-ruby_rough
             Loaded Gems
             = "(#{@gems.count})"

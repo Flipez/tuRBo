@@ -8,6 +8,6 @@ class AdminController < ApplicationController
     @categories = Category.all
   end
  
-  layout 'admin'
+  layout Settings.layout.admin
     
 end
