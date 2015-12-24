@@ -1,15 +1,15 @@
 !!!
 %html
   %head
-    %meta{:charset => "utf-8"}
+    %meta{charset: "utf-8"}
       %title= "#{Settings.blog.title} - #{Settings.blog.subtitle}"
-      %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
-      %link{:href => "//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/css/bootstrap.min.css", :rel => "stylesheet"}/
-      %link{:href => "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css", :rel => "stylesheet"}/
-      %link{:href => "https://cdn.jsdelivr.net/devicons/1.8.0/css/devicons.min.css", :rel => "stylesheet"}/
-      = stylesheet_link_tag    'admin-bootstrap4', media: 'all', 'data-turbolinks-track' => true
+      %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}
+      %link{href: "//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/css/bootstrap.min.css", rel: "stylesheet"}
+      %link{href: "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css", rel: "stylesheet"}
+      %link{href: "https://cdn.jsdelivr.net/devicons/1.8.0/css/devicons.min.css", rel: "stylesheet"}
+      = stylesheet_link_tag 'admin-bootstrap4', media: 'all', 'data-turbolinks-track' => true
   %body
-    %nav.navbar.navbar-fixed-top.navbar-dark.bg-primary
+    %nav.navbar.navbar-dark.bg-primary
       %button.navbar-toggler.hidden-sm-up.pull-right{"data-target" => "#collapsingNavbar", "data-toggle" => "collapse", :type => "button"}
         ☰
       %a.navbar-brand{href: '/'}

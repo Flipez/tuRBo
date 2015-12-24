@@ -2,3 +2,7 @@
   text-decoration: none !important;
   color: #333;
 }
+
+.navbar {
+  margin-bottom: 2em;
+}
