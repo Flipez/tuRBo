@@ -12,7 +12,10 @@ Rails.application.routes.draw do
   get 'welcome/index'
   root 'welcome#index'
   
-  
+ 
+  get 'albums/new' => 'album#new'
+  post 'albums/new' => 'album#create'
+
   get 'articles/:id' => 'articles#show', as: :article 
   post 'articles/:id' => 'comments#create'
   get 'articles/tags/:tag' => 'articles#tags'

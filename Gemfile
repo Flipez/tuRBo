@@ -5,17 +5,18 @@ gem 'redis-rails'
 
 gem 'rack-mini-profiler'
 
-gem 'rails', '4.2.3'
+gem 'rails'
 gem 'sqlite3'
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails'
 gem 'config'
 
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.1.0'
+gem 'uglifier'
+gem 'coffee-rails'
 gem 'jquery-rails'
 
 gem "therubyracer"
 gem 'bootstrap-wysihtml5-rails'
+gem 'carrierwave', github:'carrierwaveuploader/carrierwave'
 
 gem 'rails-i18n'
 gem "recaptcha", require: "recaptcha/rails"
@@ -24,8 +25,8 @@ gem 'impressionist'
 gem 'acts-as-taggable-on'
 
 gem 'turbolinks'
-gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'jbuilder'
+gem 'sdoc', group: :doc
 
 gem 'haml-rails'
 

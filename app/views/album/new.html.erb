@@ -1,0 +1,11 @@
+# notice 'html: { multipart: true }'
+<%= form_for :album, html: { multipart: true } do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  # notice 'multiple: true'
+  <%= f.label :pictures %>
+  <%= f.file_field :pictures, multiple: true, accept: "image/jpeg, image/jpg, image/gif, image/png" %>
+
+  <%= f.submit "Submit" %>
+<% end %>
