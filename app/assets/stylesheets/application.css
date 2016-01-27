@@ -12,7 +12,6 @@
  *
  *= require_tree .
  *= require_self
- *= require blog-home
  *= require sb-admin-2
  *= require timeline
  *= require metisMenu.min

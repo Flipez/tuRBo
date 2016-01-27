@@ -1,0 +1,61 @@
+!!!
+%html
+  %head
+    %meta{charset: "utf-8"}
+      %title= "#{Settings.blog.title} - #{Settings.blog.subtitle}"
+      %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}
+      %link{href: "//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/css/bootstrap.min.css", rel: "stylesheet"}
+      %link{href: "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css", rel: "stylesheet"}
+      %link{href: "https://cdn.jsdelivr.net/devicons/1.8.0/css/devicons.min.css", rel: "stylesheet"}
+      = stylesheet_link_tag 'admin-bootstrap4', media: 'all', 'data-turbolinks-track' => true
+  %body
+    .navbar.navbar-dark.bg-inverse
+      %button.navbar-toggler.hidden-sm-up.pull-right{"data-target" => "#collapsingNavbar", "data-toggle" => "collapse", :type => "button"}
+        ☰
+      %a.navbar-brand{href: '/'}
+        = Settings.blog.title
+        %i.fa.fa-rocket.fa-fw
+        \- Dashboard
+      #collapsingNavbar.collapse.navbar-toggleable-xs
+        %ul.nav.navbar-nav.pull-right
+          %li.nav-item
+            = link_to "Logged in as #{current_user.name}", current_user, method: "get", class: 'nav-link'
+          %li.nav-item
+            = link_to "Log Out", logout_path, method: "delete", class: 'nav-link'
+    #main.container-fluid
+      .row.row-offcanvas.row-offcanvas-left
+        #sidebar.col-md-3.col-lg-2.sidebar-offcanvas{:role => "navigation"}
+          %ul.nav.nav-pills.nav-stacked
+            %li.nav-item
+              %a.nav-link{:href => "/admin"}
+                %i.fa.fa-home.fa-fw
+                Dashboard home
+            %li.nav-item
+              %a.nav-link{:href => "/admin/articles"}
+                %i.fa.fa-archive.fa-fw
+                Articles
+            %li.nav-item
+              %a.nav-link{:href => "/admin/categories"}
+                %i.fa.fa-archive.fa-fw
+                Categories
+            %li.nav-item
+              %a.nav-link{:href => "/admin/comments"}
+                %i.fa.fa-comments.fa-fw
+                Comments
+            %li.nav-item
+              %a.nav-link{:href => "/admin/users"}
+                %i.fa.fa-users.fa-fw
+                Users
+            %li.nav-item
+              %a.nav-link{href: '/'}
+                %i.fa.fa-arrow-left.fa-fw
+                Back to Blog
+        / /col
+        .col-md-9.col-lg-10.main
+          - flash.each do |message_type, message|
+            %div{class: "alert alert-#{message_type}"}= message
+          = yield
+    / scripts loaded here
+    %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"}
+    %script{:src => "//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/js/bootstrap.min.js"}
+    = javascript_include_tag 'admin-bootstrap4', 'data-turbolinks-track' => true

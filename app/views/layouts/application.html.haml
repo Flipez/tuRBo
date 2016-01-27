@@ -4,64 +4,57 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title= "#{Settings.blog.title} - #{Settings.blog.subtitle}"
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css", :rel => "stylesheet"}/
+    %link{:href => "//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/css/bootstrap.min.css", :rel => "stylesheet"}/
     %link{:href => "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css", :rel => "stylesheet"}/
     %link{:href => "https://cdn.jsdelivr.net/devicons/1.8.0/css/devicons.min.css", :rel => "stylesheet"}/
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
-    %script{:src => "//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"}
+    %script{src: "https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"}
     = favicon_link_tag 'favicon.ico'
     = csrf_meta_tags
   %body
-    .modal.fade#loginmodal
-      .modal-dialog
-        .modal-content
-          .modal-header
-            %button.close.fa.fa-times{type: :button, data: {dismiss: :modal}}
-            %h4.modal-title Login
-          .modal-body
-            = form_for(:session, url: login_path) do |f|
-              .form-group
-                = f.label :name
-                = f.text_field :name, class: 'form-control'
-              .form-group
-                = f.label :password
-                = f.password_field :password, class: 'form-control'
-              .form-group.clearfix
-                = f.submit "Log in", class: "btn btn-primary pull-right"
-    %nav.navbar.navbar-inverse.navbar-fixed-top{:role => "navigation"}
-      .container
-        .navbar-header
-          %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
-            %span.sr-only Toggle navigation
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.navbar-brand{:href => "/"}
-            = Settings.blog.title
-            %i.fa.fa-rocket.fa-fw
-        #bs-example-navbar-collapse-1.collapse.navbar-collapse
-          %ul.nav.navbar-nav
-            %li
-              %a{:href => "/users"} Authors
-            %li
-              %a{:href => "/about"} About
-          %ul.nav.navbar-nav.navbar-right 
-            - if logged_in?
-              %li
-                %a{:href => "/admin"} Dashboard
-              %li
-                = link_to "Logged in as #{current_user.name}", current_user, method: "get"
-              %li
-                = link_to "Log Out", logout_path, method: :delete
-            - else
-              %li
-                %a{type: :button, data: {toggle: :modal, target: '#loginmodal'}}
-                  Login
     .container
+      .modal.fade#loginmodal
+        .modal-dialog
+          .modal-content
+            .modal-header
+              %button.close.fa.fa-times{type: :button, data: {dismiss: :modal}}
+              %h4.modal-title Login
+            .modal-body
+              = form_for(:session, url: login_path) do |f|
+                .form-group
+                  = f.label :name
+                  = f.text_field :name, class: 'form-control'
+                .form-group
+                  = f.label :password
+                  = f.password_field :password, class: 'form-control'
+                .form-group.clearfix
+                  = f.submit "Log in", class: "btn btn-primary pull-right"
+      .navbar.navbar-dark.bg-inverse
+        %a.navbar-brand{href: '/'}
+          = Settings.blog.title
+          %i.fa.fa-rocket.fa-fw
+        %ul.nav.navbar-nav
+          %li.nav-item
+            %a.nav-link{href: '/users'} Authors
+          %li.nav-item
+            %a.nav-link{href: '/about'} About
+          .pull-right
+            - if logged_in?
+              %li.nav-item
+                %a.nav-link{href: '/admin'} Dashboard
+              %li.nav-item
+                = link_to "Logged in as #{current_user.name}", current_user, method: "get", class: 'nav-link'
+              %li.nav-item
+                = link_to "Log Out", logout_path, method: :delete, class: 'nav-link'
+            - else
+              %li.nav-item
+                %a.nav-link.btn{data: {toggle: :modal, target: '#loginmodal'}}
+                  Login
+        
       .row
         .col-md-8
           - flash.each do |message_type, message|
-            %div{class: "alert alert-#{message_type}"}= message
+            .alert{class: "alert-#{message_type}"}= message
           = yield
         .col-md-4
           = render partial: 'sidebar'

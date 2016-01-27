@@ -2,7 +2,9 @@ blog:
   title: 'tuRBo'
   subtitle: 'the ultimate ruby blog :O'
   url: &url "https://example.com"
-  version: 0.9.6b
+  version: '0.9.7b (Bootstrap v4 Alpha)'
+layout:
+  admin: 'admin-bootstrap4'
 social:
   rss: 
     - *url

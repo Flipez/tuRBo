@@ -1,40 +1,45 @@
-.well
-  %h4 
+.card.card-block
+  %h4.card-title
     %i.fa.fa-hand-spock-o.fa-fw
     = I18n.t 'sidebar.welcome.title'
-  %p= I18n.t 'sidebar.welcome.content'
-.well
-  %h4
+  .card-text= I18n.t 'sidebar.welcome.content'
+.card.card-block
+  %h4.card-title
     %i.fa.fa-archive.fa-fw
     Blog Categories
-  = render partial: 'welcome/category_list'
-.well
-  %h4
-    %i.fa.fa-child.fa-fw
-    = I18n.t 'sidebar.about.title'
-  %p= I18n.t 'sidebar.about.content'
-  %p
-    %a.no-decoration.fa.fa-rss-square.fa-2x.fa-fw{href: Settings.social.rss.join}
-    %a.no-decoration.fa.fa-github-square.fa-2x.fa-fw{href: Settings.social.github}
-    %a.no-decoration.fa.fa-envelope.fa-2x.fa-fw{href: Settings.social.mail}
-    %a.no-decoration.fa.fa-steam-square.fa-2x.fa-fw{href: Settings.social.steam}
-.well
-  %h4 
+  .card-text= render partial: 'welcome/category_list'
+.card
+  .card-block
+    %h4.card-title
+      %i.fa.fa-child.fa-fw
+      = I18n.t 'sidebar.about.title'
+    .card-text.text-xs-center
+      = I18n.t 'sidebar.about.content'
+  .card-footer.text-xs-center
+    %a.card-link.no-decoration.fa.fa-rss-square.fa-2x.fa-fw{href: Settings.social.rss.join}
+    %a.card-link.no-decoration.fa.fa-github-square.fa-2x.fa-fw{href: Settings.social.github}
+    %a.card-link.no-decoration.fa.fa-envelope.fa-2x.fa-fw{href: Settings.social.mail}
+    %a.card-link.no-decoration.fa.fa-steam-square.fa-2x.fa-fw{href: Settings.social.steam}
+.card.card-block
+  %h4.card-title
     %i.fa.fa-list
-    Blogroll
-  - @articles.each do |article|
-    %p
-      %a{href: "/articles/#{article.id}"}
-        = article.title
-        %span.badge.pull-right
-          = article.impressionist_count(filter: :ip_address)
-          visits
-.well
-  %h4
+      Blogroll
+  .card-text
+    %ul
+      - @articles.each do |article|
+        %li
+          %a{href: "/articles/#{article.id}"}
+            = article.title
+            %span.label.label-pill.label-default.pull-right
+              = article.impressionist_count(filter: :ip_address)
+              visits
+.card.card-block
+  %h4.card-title
     %i.fa.fa-tags
-    The ten most used tags
-  - @most_used_tags.each do |tag|
-    %a{href: "/articles/tags/#{tag.name}"}
-      %span.badge
-        = tag.name
+      The ten most used tags
+  .card-text
+    - @most_used_tags.each do |tag|
+      %a{href: "/articles/tags/#{tag.name}"}
+        %span.label.label-pill.label-default
+          = tag.name
 
