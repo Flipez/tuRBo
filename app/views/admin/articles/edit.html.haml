@@ -18,18 +18,13 @@
                                 Category.all,
                                 :id,
                                 :name, 
-                                {selected: (@article.category.id if @article.category)}
+                                {selected: (@article.category.id if @article.category)},
+                                {class: 'form-control'}
 
         .form-group
           = f.label :tag_list
           = f.text_field :tag_list, class: 'form-control',
-                                    value: @article.tag_list.join(", ")
+                                    'data-role': :tagsinput,
+                                    value: @article.tag_list.join(",")
         
         = f.submit class: 'form-control'
-:javascript
-  $(document).ready(function(){
-
-    $('.wysihtml5').each(function(i, elem) {
-      $(elem).wysihtml5({'toolbar': {'html': true}});
-    });
-  })

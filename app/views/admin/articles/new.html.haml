@@ -18,13 +18,6 @@
 
         .form-group
           = f.label :tag_list
-          = f.text_field :tag_list, class: 'form-control'
+          = f.text_field :tag_list, class: 'form-control', 'data-role': 'tagsinput'
 
         = f.submit class: 'form-control'
-:javascript
-  $(document).ready(function(){
-
-    $('.wysihtml5').each(function(i, elem) {
-      $(elem).wysihtml5();
-    });
-  })

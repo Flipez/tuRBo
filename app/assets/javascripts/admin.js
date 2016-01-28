@@ -10,7 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+//= require jquery2
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
@@ -18,4 +18,15 @@
 //= require metisMenu.min
 //= require bootstrap-wysihtml5
 //= require bootstrap-wysihtml5/locales
-//= require bootstrap-tagsinput
+
+$(document).ready(function() {
+  $('[data-toggle=offcanvas]').click(function() {
+    $('.row-offcanvas').toggleClass('active');
+  });
+});
+$(document).ready(function(){
+    $('.wysihtml5').each(function(i, elem) {
+      $(elem).wysihtml5();
+    });
+  })
+
