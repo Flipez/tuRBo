@@ -8,7 +8,9 @@ gem 'rack-mini-profiler'
 gem 'rails'
 gem 'sqlite3'
 gem 'sass-rails'
+
 gem 'config'
+gem "rails-settings-cached", "~> 0.4.0"
 
 gem 'uglifier'
 gem 'coffee-rails'

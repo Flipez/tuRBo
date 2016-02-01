@@ -1,0 +1,9 @@
+.row
+  .panel.panel-primary
+    .panel-heading
+      Settings
+    .panel-body
+      - @settings.each do |setting|
+        .input-group
+          %span.input-group-addon= setting.var
+          %input.form-control{type: :text, value: setting.value}

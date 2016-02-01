@@ -51,7 +51,9 @@ Rails.application.routes.draw do
     
     get 'comments' => 'comments#index'
     delete 'comments/:id' => 'comments#destroy'
-  
+ 
+    get 'settings' => 'settings#index'
+    post 'settings' => 'settings#save'
 
   end
 
