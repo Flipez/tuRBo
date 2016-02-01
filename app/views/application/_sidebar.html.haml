@@ -14,10 +14,10 @@
     = I18n.t 'sidebar.about.title'
   %p= MySettings.about
   %p
-    %a.no-decoration.fa.fa-rss-square.fa-2x.fa-fw{href: Settings.social.rss.join}
-    %a.no-decoration.fa.fa-github-square.fa-2x.fa-fw{href: Settings.social.github}
-    %a.no-decoration.fa.fa-envelope.fa-2x.fa-fw{href: Settings.social.mail}
-    %a.no-decoration.fa.fa-steam-square.fa-2x.fa-fw{href: Settings.social.steam}
+    %a.no-decoration.fa.fa-rss-square.fa-2x.fa-fw{href: MySettings.rss}
+    %a.no-decoration.fa.fa-github-square.fa-2x.fa-fw{href: MySettings.github}
+      %a.no-decoration.fa.fa-envelope.fa-2x.fa-fw{href: "mailto:#{MySettings.mail}"}
+    %a.no-decoration.fa.fa-steam-square.fa-2x.fa-fw{href: MySettings.steam}
 .well
   %h4 
     %i.fa.fa-list

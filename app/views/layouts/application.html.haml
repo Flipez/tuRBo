@@ -48,7 +48,7 @@
           %ul.nav.navbar-nav.navbar-right 
             - if logged_in?
               %li
-                %a{:href => "/admin"} Dashboard
+                %a{:href => "/admin"} Mission Control
               %li
                 = link_to "#{I18n.t('navbar.logged-in')} #{current_user.name}", current_user, method: "get"
               %li
@@ -73,7 +73,7 @@
                 %a.no-decoration{href: 'https://github.com/Flipez/tuRBo'}
                   tuRBo
                   %small.text-muted
-                    = Settings.blog.version
+                    = MySettings.version
                   - if Rails.env.development?
                     %span.label.label-danger
                       running in development mode!
