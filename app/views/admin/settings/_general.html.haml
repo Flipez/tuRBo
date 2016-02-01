@@ -1,0 +1,10 @@
+%h4= I18n.t 'admin.settings.general'
+.input-group
+  %span.input-group-addon.settings= I18n.t 'blog.title'
+  %input.form-control{type: :text, name: :title, value: MySettings.title}
+.input-group
+  %span.input-group-addon.settings= I18n.t 'blog.subtitle'
+  %input.form-control{type: :text, name: :subtitle, value: MySettings.subtitle}
+.input-group
+  %span.input-group-addon.settings= I18n.t 'blog.url'
+  %input.form-control{type: :text, name: :url, value: MySettings.url}

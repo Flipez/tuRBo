@@ -3,44 +3,13 @@
     .panel-heading= I18n.t 'admin.settings.title'
     .panel-body
       = form_tag(method: :post) do
-        %h4= I18n.t 'admin.settings.general'
-        .input-group
-          %span.input-group-addon.settings= I18n.t 'blog.title'
-          %input.form-control{type: :text, name: :title, value: MySettings.title}
-        .input-group
-          %span.input-group-addon.settings= I18n.t 'blog.subtitle'
-          %input.form-control{type: :text, name: :subtitle, value: MySettings.subtitle}
-        .input-group
-          %span.input-group-addon.settings= I18n.t 'blog.url'
-          %input.form-control{type: :text, name: :url, value: MySettings.url}
+        = render partial: 'general'
         %hr
-        %h4= I18n.t 'admin.settings.blog'
-        .input-group
-          %span.input-group-addon.settings= I18n.t 'sidebar.about.title'
-          %textarea.form-control{type: :text, name: :about}
-            =MySettings.about
-        .input-group
-          %span.input-group-addon.settings= I18n.t 'sidebar.welcome.title'
-          %input.form-control{type: :text, name: :welcome, value: MySettings.welcome}
+        = render partial: 'blog'
         %hr
-        %h4= I18n.t 'admin.settings.social'
-        .input-group
-          %span.input-group-addon.settings RSS Feed
-          %input.form-control{type: :text, name: :rss, value: MySettings.rss}
-        .input-group
-          %span.input-group-addon.settings GitHub
-          %input.form-control{type: :text, name: :github, value: MySettings.github}
-        .input-group
-          %span.input-group-addon.settings Steam
-          %input.form-control{type: :text, name: :steam, value: MySettings.steam}
-        .input-group
-          %span.input-group-addon.settings flickr
-          %input.form-control{type: :text, name: :flickr,  value: MySettings.flickr}
-        .input-group
-          %span.input-group-addon.settings Mail
-          %input.form-control{type: :text, name: :mail, value: MySettings.mail}
+        = render partial: 'social'
         .input-group
           %span.input-group-addon.settings Version
           %input.form-control{disabled: true, type: :text, name: :mail, value: MySettings.version}
-        .pull-right{style: 'padding-top: 10px;'}
-          = submit_tag I18n.t('admin.submit.save'), class: 'btn btn-success'
+        %hr
+        = render partial: 'recaptcha'

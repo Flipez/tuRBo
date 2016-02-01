@@ -1,0 +1,8 @@
+%h4= I18n.t 'admin.settings.blog'
+.input-group
+  %span.input-group-addon.settings= I18n.t 'sidebar.about.title'
+  %textarea.form-control{type: :text, name: :about}
+    =MySettings.about
+.input-group
+  %span.input-group-addon.settings= I18n.t 'sidebar.welcome.title'
+  %input.form-control{type: :text, name: :welcome, value: MySettings.welcome}

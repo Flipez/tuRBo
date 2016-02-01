@@ -1,0 +1,20 @@
+%h4
+  = I18n.t 'admin.settings.social.title'
+  %small
+    %span.fa.fa-fw.fa-exclamation-circle{style: 'color: orange;'}
+    = I18n.t 'admin.settings.social.emtpy_warning'
+.input-group
+  %span.input-group-addon.settings RSS Feed
+  %input.form-control{type: :text, name: :rss, value: MySettings.rss}
+.input-group
+  %span.input-group-addon.settings GitHub
+  %input.form-control{type: :text, name: :github, value: MySettings.github}
+.input-group
+  %span.input-group-addon.settings Steam
+  %input.form-control{type: :text, name: :steam, value: MySettings.steam}
+.input-group
+  %span.input-group-addon.settings flickr
+  %input.form-control{type: :text, name: :flickr,  value: MySettings.flickr}
+.input-group
+  %span.input-group-addon.settings Mail
+  %input.form-control{type: :text, name: :mail, value: MySettings.mail}
