@@ -5,9 +5,7 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
 
   before_filter :require_login
-
   before_filter :set_variables
-
   before_filter :set_start_time
 
   def set_start_time
