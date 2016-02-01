@@ -2,7 +2,7 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title= "#{Settings.blog.title} - #{Settings.blog.subtitle}"
+    %title= "#{MySettings.title} - #{MySettings.subtitle}"
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css", :rel => "stylesheet"}/
     %link{:href => "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css", :rel => "stylesheet"}/
@@ -16,39 +16,39 @@
         .container-fluid
           .navbar-header
             %a.navbar-brand{href: '/'}
-              = Settings.blog.title
+              = MySettings.title
               %i.fa.fa-rocket.fa-fw
-              \- Dashboard
-            %ul.nav.navbar-nav
-              %li= link_to "Logged in as #{current_user.name}", current_user, method: "get"
-              %li= link_to "Log Out", logout_path, method: "delete"
+              \- Mission Control
+            %ul.nav.navbar-nav.navbar-right
+              %li= link_to "#{I18n.t('navbar.logged-in')} #{current_user.name}", current_user, method: "get"
+              %li= link_to I18n.t('navbar.log-out'), logout_path, method: "delete"
         .navbar-default.sidebar{:role => "navigation"}
           .sidebar-nav.navbar-collapse
             %ul#side-menu.nav
               %li
-                %a{:href => "/admin"}
+                %a{href: "/admin"}
                   %i.fa.fa-home.fa-fw
-                  Dashboard home
+                  = I18n.t 'admin.menu.home'
               %li
                 %a{:href => "/admin/articles"}
                   %i.fa.fa-archive.fa-fw
-                  Articles
+                  = I18n.t 'admin.menu.articles'
               %li
                 %a{:href => "/admin/categories"}
                   %i.fa.fa-archive.fa-fw
-                  Categories
+                  = I18n.t 'admin.menu.categories'
               %li
                 %a{:href => "/admin/comments"}
                   %i.fa.fa-comments.fa-fw
-                  Comments
+                  = I18n.t 'admin.menu.comments'
               %li
                 %a{:href => "/admin/users"}
                   %i.fa.fa-users.fa-fw
-                  Users
+                  = I18n.t 'admin.menu.users'
               %li
                 %a{href: '/'}
                   %i.fa.fa-arrow-left.fa-fw
-                  Back to Blog
+                  = I18n.t 'admin.menu.back'
       #page-wrapper{style: 'padding-top: 10px;'}
         - flash.each do |message_type, message|
           %div{class: "alert alert-#{message_type}"}= message

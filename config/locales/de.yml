@@ -20,6 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 de:
+  blog:
+    title: 'Seitentitel'
+    subtitle: 'Seitenuntertitel'
+    url: 'Seiten-URL'
   errors:
     '404':
       title: '404 Seite nicht gefunden'
@@ -33,6 +37,10 @@ de:
       success: 'Kommentar erfolgreich angelegt'
       error: 'Kommentar konnte nicht erstellt werden'
 
+  navbar:
+    logged-in: 'Angemeldet als'
+    log-in: 'Anmelden'
+    log-out: 'Abmelden'
   sidebar:
     welcome:
       title: "Willkommen"
@@ -42,6 +50,22 @@ de:
       content: "Der Blog wurde mit Ruby on Rails erstellt, mit SQLite gefüttert und mit Puma zum laufen gebracht. Wenn Du uns helfen möchtest kannst du gern unserem GitHub Repository beitragen."
   
   admin:
+    menu:
+      articles: 'Artikel'
+      back: 'Zurück zum Blog'
+      categories: 'Kategorien'
+      comments: 'Kommentare'
+      home: 'Mission Control Home'
+      settings: 'Einstellungen'
+      users: 'Benutzer'
+
+    submit:
+      save: Speichern
+    settings:
+      title: 'Einstellungen'
+      general: 'Allgemein'
+      social: 'Soziales'
+      blog: 'Blog'
     confirm:
       delete: "Möchtest du das wirklich löschen?"
  

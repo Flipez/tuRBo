@@ -2,7 +2,7 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title= "#{Settings.blog.title} - #{Settings.blog.subtitle}"
+    %title= "#{MySettings.title} - #{MySettings.subtitle}"
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css", :rel => "stylesheet"}/
     %link{:href => "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css", :rel => "stylesheet"}/
@@ -37,7 +37,7 @@
             %span.icon-bar
             %span.icon-bar
           %a.navbar-brand{:href => "/"}
-            = Settings.blog.title
+            = MySettings.title
             %i.fa.fa-rocket.fa-fw
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           %ul.nav.navbar-nav
@@ -50,13 +50,13 @@
               %li
                 %a{:href => "/admin"} Dashboard
               %li
-                = link_to "Logged in as #{current_user.name}", current_user, method: "get"
+                = link_to "#{I18n.t('navbar.logged-in')} #{current_user.name}", current_user, method: "get"
               %li
-                = link_to "Log Out", logout_path, method: :delete
+                = link_to I18n.t('navbar.log-out'), logout_path, method: :delete
             - else
               %li
                 %a{type: :button, data: {toggle: :modal, target: '#loginmodal'}}
-                  Login
+                  =I18n.t 'navbar.log-in'
     .container
       .row
         .col-md-8

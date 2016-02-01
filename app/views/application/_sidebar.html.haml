@@ -2,7 +2,7 @@
   %h4 
     %i.fa.fa-hand-spock-o.fa-fw
     = I18n.t 'sidebar.welcome.title'
-  %p= I18n.t 'sidebar.welcome.content'
+  %p= MySettings.welcome
 .well
   %h4
     %i.fa.fa-archive.fa-fw
@@ -12,7 +12,7 @@
   %h4
     %i.fa.fa-child.fa-fw
     = I18n.t 'sidebar.about.title'
-  %p= I18n.t 'sidebar.about.content'
+  %p= MySettings.about
   %p
     %a.no-decoration.fa.fa-rss-square.fa-2x.fa-fw{href: Settings.social.rss.join}
     %a.no-decoration.fa.fa-github-square.fa-2x.fa-fw{href: Settings.social.github}
