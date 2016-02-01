@@ -3,8 +3,6 @@ source 'https://rubygems.org'
 gem 'sidekiq'
 gem 'redis-rails'
 
-gem 'rack-mini-profiler'
-
 gem 'rails'
 gem 'sqlite3'
 gem 'sass-rails'
@@ -40,6 +38,9 @@ gem 'bcrypt'
 gem 'pry-rails'
 
 group :development, :test do
+  gem 'rack-mini-profiler'
+  gem 'flamegraph'
+
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
