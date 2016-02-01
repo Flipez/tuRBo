@@ -3,11 +3,13 @@
   %small
     %span.fa.fa-fw.fa-exclamation-circle{style: 'color: orange;'}
     = I18n.t 'admin.settings.recaptcha.reboot_warning'
+%dl
+  %dt= I18n.t 'admin.settings.recaptcha.enable'
+  %dd
+    %input.form-control.bs-switch{type: :checkbox, name: :enable_recaptcha, checked: MySettings.enable_recaptcha}
 .input-group
   %span.input-group-addon.settings= I18n.t 'admin.settings.recaptcha.private'
   %input.form-control{type: :text, name: :recaptcha_privkey, value: MySettings.recaptcha_privkey}
 .input-group
   %span.input-group-addon.settings= I18n.t 'admin.settings.recaptcha.public'
   %input.form-control{type: :text, name: :recaptcha_pubkey, value: MySettings.recaptcha_pubkey}
-.pull-right{style: 'padding-top: 10px;'}
-  = submit_tag I18n.t('admin.submit.save'), class: 'btn btn-success'

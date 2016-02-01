@@ -1,15 +1,14 @@
 .row
-  .panel.panel-primary
-    .panel-heading= I18n.t 'admin.settings.title'
-    .panel-body
-      = form_tag(method: :post) do
-        = render partial: 'general'
-        %hr
-        = render partial: 'blog'
-        %hr
-        = render partial: 'social'
-        .input-group
-          %span.input-group-addon.settings Version
-          %input.form-control{disabled: true, type: :text, name: :mail, value: MySettings.version}
-        %hr
-        = render partial: 'recaptcha'
+  = form_tag(method: :post) do
+    = render partial: 'general'
+    %hr
+    = render partial: 'blog'
+    %hr
+    = render partial: 'social'
+    .input-group
+      %span.input-group-addon.settings Version
+      %input.form-control{disabled: true, type: :text, name: :mail, value: MySettings.version}
+    %hr
+    = render partial: 'recaptcha'
+.pull-right{style: 'padding-top: 10px;'}
+  = submit_tag I18n.t('admin.submit.save'), class: 'btn btn-success'

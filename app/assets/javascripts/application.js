@@ -19,3 +19,8 @@
 //= require bootstrap-wysihtml5
 //= require bootstrap-wysihtml5/locales
 //= require bootstrap-tagsinput
+//= require bootstrap-switch
+
+$('document').ready(function() {
+  $('.bs-switch').bootstrapSwitch();
+});

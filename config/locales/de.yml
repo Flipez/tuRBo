@@ -72,6 +72,7 @@ de:
         reboot_warning: 'Erfordert einen Neustart des Anwendungsservers'
         private: 'Privater Schlüssel'
         public: 'Öffentlicher Schlüssel'
+        enable: 'reCAPTCHA aktivieren?'
     confirm:
       delete: "Möchtest du das wirklich löschen?"
  

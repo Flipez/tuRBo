@@ -16,6 +16,8 @@ gem 'jquery-rails'
 gem "therubyracer"
 gem 'bootstrap-wysihtml5-rails'
 gem 'bootstrap-tagsinput-rails'
+gem "bootstrap-switch-rails"
+
 gem 'carrierwave', github:'carrierwaveuploader/carrierwave'
 
 gem 'rails-i18n'
