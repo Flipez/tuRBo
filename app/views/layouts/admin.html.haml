@@ -15,7 +15,7 @@
       %nav.navbar.navbar-inverse.navbar-static-top{:role => "navigation", :style => "margin-bottom: 0"}
         .container-fluid
           .navbar-header
-            %a.navbar-brand{href: '/'}
+            %a.navbar-brand{href: '/admin'}
               = MySettings.title
               %i.fa.fa-rocket.fa-fw
               \- Mission Control
@@ -25,10 +25,6 @@
         .navbar-default.sidebar{:role => "navigation"}
           .sidebar-nav.navbar-collapse
             %ul#side-menu.nav
-              %li
-                %a{href: "/admin"}
-                  %i.fa.fa-home.fa-fw
-                  = I18n.t 'admin.menu.home'
               %li
                 %a{:href => "/admin/articles"}
                   %i.fa.fa-archive.fa-fw
