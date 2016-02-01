@@ -63,8 +63,15 @@ de:
     settings:
       title: 'Einstellungen'
       general: 'Allgemein'
-      social: 'Soziales'
+      social:
+        title: 'Soziales'
+        emtpy_warning: 'Bei einem leeren Feld wird das entsprechende Icon ausgeblendet'
       blog: 'Blog'
+      recaptcha:
+        title: 'reCAPTCHA'
+        reboot_warning: 'Erfordert einen Neustart des Anwendungsservers'
+        private: 'Privater Schlüssel'
+        public: 'Öffentlicher Schlüssel'
     confirm:
       delete: "Möchtest du das wirklich löschen?"
  
