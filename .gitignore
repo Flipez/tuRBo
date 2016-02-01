@@ -17,7 +17,7 @@
 /tmp
 *.swp
 
-Gemfile.lcok
+Gemfile.lock
 
 /public/assets
 config/secrets.yml
