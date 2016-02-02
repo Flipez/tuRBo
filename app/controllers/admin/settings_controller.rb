@@ -16,4 +16,15 @@ class Admin::SettingsController < AdminController
     redirect_to :back
   end
 
+  def add_url
+    urls = MySettings.dynamic_urls
+    urls ||= {}
+
+    urls[params[:domain]] = params[:name]
+
+    MySettings.dynamic_urls = urls
+
+    redirect_to :back
+  end
+
 end

@@ -10,5 +10,11 @@
       %input.form-control{disabled: true, type: :text, name: :mail, value: MySettings.version}
     %hr
     = render partial: 'recaptcha'
-.pull-right{style: 'padding-top: 10px;'}
-  = submit_tag I18n.t('admin.submit.save'), class: 'btn btn-success'
+    .pull-right{style: 'padding-top: 10px;'}
+      = submit_tag I18n.t('admin.submit.save'), class: 'btn btn-success'
+.clearfix
+%span.alert.alert-danger
+  %span.fa.fa-exclamation-triangle
+  Highly experimental features beyond this point
+%hr
+= render partial: 'dynamic_url'

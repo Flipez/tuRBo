@@ -1,0 +1,25 @@
+%h4
+  = I18n.t 'admin.settings.dynamic_url.title'
+%table.table.table-hover
+  %tr
+    %th Domain
+    %th Title
+    %th Subtitle
+    %th Action
+  - MySettings.dynamic_urls.to_h.each do |k,v|
+    %tr
+      %td= k
+      %td= v
+      %td
+      %td
+        %a.btn.btn-danger
+          Remove
+  %tr
+    = form_tag(method: :post, action: 'add_url') do
+      %td
+        %input.form-control{type: :text, name: :domain}
+      %td
+        %input.form-control{type: :text, name: :name}
+      %td
+      %td
+        = submit_tag 'Add', class: 'btn btn-success'

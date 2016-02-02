@@ -54,6 +54,7 @@ Rails.application.routes.draw do
  
     get 'settings' => 'settings#index'
     post 'settings' => 'settings#save'
+    post 'settings/add_url' => 'settings#add_url'
 
   end
 
