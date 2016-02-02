@@ -2,12 +2,12 @@
   = I18n.t 'admin.settings.recaptcha.title'
 .input-group
   %span.input-group-addon.settings
+    = I18n.t 'admin.settings.recaptcha.enable'
+  %span.form-control
     %input.bs-switch{ type: :checkbox,
                       name: :enable_recaptcha,
                       checked: MySettings.enable_recaptcha,
                       data: {size: :mini, 'off-color' => 'danger', 'on-color' => 'success'}}
-  %span.form-control
-    = I18n.t 'admin.settings.recaptcha.enable'
 .input-group
   %span.input-group-addon.settings
     = I18n.t 'admin.settings.recaptcha.private'
