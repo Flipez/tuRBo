@@ -15,6 +15,8 @@ class ApplicationController < ActionController::Base
 
 
   def set_variables
+    I18n.locale = MySettings.locale || I18n.default_locale
+
     @articles = Article.all
     @categories = Category.all
     @most_used_tags = ActsAsTaggableOn::Tag.most_used(10)

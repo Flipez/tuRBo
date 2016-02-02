@@ -1,7 +1,8 @@
 MySettings.defaults[:title]             = 'tuRBo'
 MySettings.defaults[:subtitle]          = 'the ultimate ruby blog :o'
 
-MySettings.defaults[:rss]      = "/feed?format=rss"
+MySettings.defaults[:available_locales] = [:de, :en]
+Rails.application.config.i18n.default_locale = MySettings.locale || :de
 
 MySettings.defaults[:rss]               = "/feed?format=rss"
 

@@ -8,3 +8,9 @@
 .input-group
   %span.input-group-addon.settings= I18n.t 'blog.url'
   %input.form-control{type: :text, name: :url, value: MySettings.url}
+
+.input-group
+  %span.input-group-addon.settings= I18n.t 'blog.url'
+  %select.form-control{name: :locale}
+    - MySettings.available_locales.each do |locale|
+      %option{selected: (true if locale.to_s == MySettings.locale.to_s) }= locale
