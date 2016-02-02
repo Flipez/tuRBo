@@ -1,25 +1,9 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
+  blog:
+    title: 'Pagetitle'
+    subtitle: 'Subtitle'
+    url: 'Site-URL'
+  
   errors:
     404:
       title: '404 Site not found'
@@ -32,17 +16,48 @@ en:
     create:
       success: 'Comment created successfully'
       error: 'Comment could not be created'
+      wrong_recaptcha: 'reCAPTCHA does not seem solved.'
 
+  navbar:
+    logged-in: 'Logged in as'
+    log-in: 'Login'
+    log-out: 'Logout'
+    authors: 'Authors'
+    about: 'About'
+    dashboard: 'Mission Control'
+  
   sidebar:
     welcome:
       title: "Welcome"
-      content: "If I like you, you may be warm welcomed here"
     about:
       title: "About"
-      content: "This blog is built with Ruby on Rails, feeded by SQLite and fired up with Puma.
-                If you like to improve our work, feel free to contribute to our GitHub repository"
 
   admin:
+    menu:
+      articles: 'Articles'
+      back: 'Back to Blog'
+      categories: 'Categories'
+      comments: 'Comments'
+      settings: 'Settings'
+      users: 'Users'
+
+    submit:
+      save: 'Save'
+    
+    settings:
+      title: 'Settings'
+      general: 'General'
+      social:
+        title: 'Social'
+        emtpy_warning: 'If a field is empty, the icon will disappear'
+      blog: 'Blog'
+      recaptcha:
+        title: 'reCAPTCHA'
+        reboot_warning: 'Requires the Appserver to restart'
+        private: 'Private Key'
+        public: 'Public Key'
+        enable: 'activate reCAPTCHA?'
+    
     confirm:
       delete: "Do you really want to delete?"
  
