@@ -1,16 +1,23 @@
 %h4
   = I18n.t 'admin.settings.recaptcha.title'
 .input-group
-  %span.input-group-addon.settings= I18n.t 'admin.settings.recaptcha.enable'
-  %input.form-control{type: :checkbox, name: :enable_recaptcha, checked: MySettings.enable_recaptcha}
-%small
-  %span.fa.fa-fw.fa-exclamation-circle{style: 'color: orange;'}
-  = I18n.t 'admin.settings.recaptcha.reboot_warning'
+  %span.input-group-addon.settings
+    %input.bs-switch{ type: :checkbox,
+                      name: :enable_recaptcha,
+                      checked: MySettings.enable_recaptcha,
+                      data: {size: :mini, 'off-color' => 'danger', 'on-color' => 'success'}}
+  %span.form-control
+    = I18n.t 'admin.settings.recaptcha.enable'
 .input-group
   %span.input-group-addon.settings
     = I18n.t 'admin.settings.recaptcha.private'
     %span.pull-right.fa.fa-fw.fa-exclamation-circle{style: 'color: orange;'}
   %input.form-control{type: :text, name: :recaptcha_privkey, value: MySettings.recaptcha_privkey}
 .input-group
-  %span.input-group-addon.settings= I18n.t 'admin.settings.recaptcha.public'
+  %span.input-group-addon.settings
+    = I18n.t 'admin.settings.recaptcha.public'
+    %span.pull-right.fa.fa-fw.fa-exclamation-circle{style: 'color: orange;'}
   %input.form-control{type: :text, name: :recaptcha_pubkey, value: MySettings.recaptcha_pubkey}
+%small
+  %span.fa.fa-fw.fa-exclamation-circle{style: 'color: orange;'}
+  = I18n.t 'admin.settings.recaptcha.reboot_warning'
