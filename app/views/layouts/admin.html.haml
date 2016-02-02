@@ -1,22 +1,23 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title= "#{MySettings.title} - #{MySettings.subtitle}"
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css", :rel => "stylesheet"}/
-    %link{:href => "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css", :rel => "stylesheet"}/
-    %link{:href => "https://cdn.jsdelivr.net/devicons/1.8.0/css/devicons.min.css", :rel => "stylesheet"}/
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    %link{href: "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css", rel: "stylesheet"}/
+    %link{href: "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css", rel: "stylesheet"}/
+    %link{href: "https://cdn.jsdelivr.net/devicons/1.8.0/css/devicons.min.css", rel: "stylesheet"}/
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
-    %script{:src => "//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"}
+    %script{src: "//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"}
     = csrf_meta_tags
   %body{style: 'padding-top:0px'}
     #wrapper
-      %nav.navbar.navbar-inverse.navbar-static-top{:role => "navigation", :style => "margin-bottom: 0"}
+      %nav.navbar.navbar-inverse.navbar-static-top{role: "navigation", style: "margin-bottom: 0"}
         .container-fluid
           .navbar-header
             %a.navbar-brand{href: '/admin'}
               = MySettings.title
+              = request.host
               %i.fa.fa-rocket.fa-fw
               \- Mission Control
             %ul.nav.navbar-nav.navbar-right
@@ -26,21 +27,25 @@
           .sidebar-nav.navbar-collapse
             %ul#side-menu.nav
               %li
-                %a{:href => "/admin/articles"}
+                %a{href: "/admin/articles"}
                   %i.fa.fa-archive.fa-fw
                   = I18n.t 'admin.menu.articles'
               %li
-                %a{:href => "/admin/categories"}
+                %a{href: "/admin/categories"}
                   %i.fa.fa-archive.fa-fw
                   = I18n.t 'admin.menu.categories'
               %li
-                %a{:href => "/admin/comments"}
+                %a{href: "/admin/comments"}
                   %i.fa.fa-comments.fa-fw
                   = I18n.t 'admin.menu.comments'
               %li
-                %a{:href => "/admin/users"}
+                %a{href: "/admin/users"}
                   %i.fa.fa-users.fa-fw
                   = I18n.t 'admin.menu.users'
+              %li
+                %a{href: "/admin/settings"}
+                  %i.fa.fa-gears.fa-fw
+                  = I18n.t 'admin.menu.settings'
               %li
                 %a{href: '/'}
                   %i.fa.fa-arrow-left.fa-fw
