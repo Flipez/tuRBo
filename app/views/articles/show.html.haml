@@ -45,7 +45,7 @@
       = f.text_area :text, class: 'form-control'
 
     .form-group
-      = recaptcha_tags
+      = recaptcha_tags if MySettings.enable_recaptcha
 
     = f.submit class: 'form-control'
 .list-group

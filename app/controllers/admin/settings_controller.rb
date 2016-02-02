@@ -5,13 +5,14 @@ class Admin::SettingsController < AdminController
   end
 
   def save
-
     settings = params.except(:commit, :method, :controller, :action, :utf8, :authenticity_token)
-
+    
     settings.each do |k,v|
       v = nil if v.empty?
       MySettings[k.to_sym] = v
     end
+
+    MySettings.enable_recaptcha = false unless settings.include? :enable_recaptcha
 
     redirect_to :back
   end

@@ -36,11 +36,15 @@ de:
     create:
       success: 'Kommentar erfolgreich angelegt'
       error: 'Kommentar konnte nicht erstellt werden'
+      wrong_recaptcha: 'reCAPTCHA wurde nicht erfolgreich gelöst.'
 
   navbar:
     logged-in: 'Angemeldet als'
     log-in: 'Anmelden'
     log-out: 'Abmelden'
+    authors: 'Autoren'
+    about: 'Über'
+    dashboard: 'Mission Control'
   sidebar:
     welcome:
       title: "Willkommen"
