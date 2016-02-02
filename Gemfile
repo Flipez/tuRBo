@@ -6,7 +6,7 @@ gem 'rails'
 gem 'sqlite3'
 gem 'sass-rails'
 
-gem 'config'
+#gem 'config'
 gem "rails-settings-cached", "~> 0.4.0"
 
 gem 'uglifier'
