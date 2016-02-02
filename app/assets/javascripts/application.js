@@ -23,4 +23,7 @@
 
 $('document').ready(function() {
   $('.bs-switch').bootstrapSwitch();
+  $('.wysihtml5').each(function(i, elem) {
+    $(elem).wysihtml5();
+  });
 });
