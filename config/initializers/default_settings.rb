@@ -1,12 +1,7 @@
 MySettings.defaults[:title]    = 'super dupa blog'
 MySettings.defaults[:subtitle] = 'Linux & IT-Fan, Nerd, Supertüp'
 
-MySettings.defaults[:url]      = 'https://wingman.flipez.de'
-MySettings.defaults[:rss]      = "#{MySettings.url}/feed?format=rss"
-MySettings.defaults[:github]   = 'https://github.com/Flipez'
-MySettings.defaults[:steam]    = 'https://steamcommunity.com/id/flipez'
-MySettings.defaults[:flickr]   = 'https://flickr.com/photos/Flipez'
-MySettings.defaults[:mail]     = 'mailto:rm@flipez.net'
+MySettings.defaults[:rss]      = "/feed?format=rss"
 
 MySettings.defaults[:recaptcha_pubkey] = '6Lc6BAAAAAAAAChqRbQZcn_yyyyyyyyyyyyyyyyy'
 MySettings.defaults[:recaptcha_privkey] = '6Lc6BAAAAAAAAKN3DRm6VA_xxxxxxxxxxxxxxxxx'
