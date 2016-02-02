@@ -1,25 +1,34 @@
 %h4
   = I18n.t 'admin.settings.dynamic_url.title'
-%table.table.table-hover
-  %tr
-    %th Domain
-    %th Title
-    %th Subtitle
-    %th Action
-  - MySettings.dynamic_urls.to_h.each do |k,v|
-    %tr
-      %td= k
-      %td= v
-      %td
-      %td
-        %a.btn.btn-danger
-          Remove
-  %tr
-    = form_tag(method: :post, action: 'add_url') do
-      %td
-        %input.form-control{type: :text, name: :domain}
-      %td
-        %input.form-control{type: :text, name: :name}
-      %td
-      %td
-        = submit_tag 'Add', class: 'btn btn-success'
+
+.panel.panel-info
+  .panel-body
+    Example:
+    = "current host is: #{request.host}"
+.col-md-12
+  .col-md-6
+    %table.table
+      %tr
+        %th Url
+        %th Title
+        %th Subtitle
+      - @dynamic_urls.each do |url|
+        %tr
+          %td= url.url
+          %td= url.title
+          %td= url.subtitle
+  .col-md-6
+    = form_for :dynamic_url, url: {controller: 'admin/dynamic_urls', action: :create} do |f|
+      .form-group
+        = f.label :url
+        = f.text_field :url, class: 'form-control'
+    
+      .form-group
+        = f.label :title
+        = f.text_field :title, class: 'form-control'
+    
+      .form-group
+        = f.label :subtitle
+        = f.text_field :subtitle, class: 'form-control'
+    
+      = f.submit class: 'form-control'

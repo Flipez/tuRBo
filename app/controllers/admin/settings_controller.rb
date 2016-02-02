@@ -2,6 +2,7 @@ class Admin::SettingsController < AdminController
   
   def index
     @settings = MySettings.all
+    @dynamic_urls = DynamicUrl.all
   end
 
   def save

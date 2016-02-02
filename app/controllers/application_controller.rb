@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   before_filter :require_login
   before_filter :set_variables
   before_filter :set_start_time
+  before_filter :set_titles
 
   def set_start_time
     @start_time = Time.now.to_f
@@ -17,6 +18,18 @@ class ApplicationController < ActionController::Base
     @articles = Article.all
     @categories = Category.all
     @most_used_tags = ActsAsTaggableOn::Tag.most_used(10)
+  end
+
+  def set_titles
+    DynamicUrl.all.each do |url|
+      if request.host == url.url
+       @title = url.title
+       @subtitle = url.subtitle
+      end
+    end
+
+    @title ||= MySettings.title
+    @subtitle ||= MySettings.subtitle
   end
 
   private

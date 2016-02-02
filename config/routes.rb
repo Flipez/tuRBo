@@ -54,7 +54,9 @@ Rails.application.routes.draw do
  
     get 'settings' => 'settings#index'
     post 'settings' => 'settings#save'
-    post 'settings/add_url' => 'settings#add_url'
+    
+    post 'dynamic_urls' => 'dynamic_urls#create'
+    delete 'dynamic_urls/:id' => 'dynamic_urls#destroy'
 
   end
 
