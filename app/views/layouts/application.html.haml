@@ -1,16 +1,22 @@
 !!!
-%html
+%html{:lang => "en"}
   %head
-    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title= "#{@title} - #{@subtitle}"
+    %meta{:charset => "utf-8"}
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
+    / The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags
+    %meta{:content => "", :name => "description"}
+    %meta{:content => "", :name => "author"}
+    %title="#{@title} - #{@subtitle}"
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     %link{href: "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css", rel: "stylesheet"}/
     %link{href: "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css", rel: "stylesheet"}/
     %link{href: "https://cdn.jsdelivr.net/devicons/1.8.0/css/devicons.min.css", rel: "stylesheet"}/
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
-    %script{src: "//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"}
+    %script{src: "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"}
     = favicon_link_tag 'favicon.ico'
     = csrf_meta_tags
+    / Custom styles for this template
   %body
     .modal.fade#loginmodal
       .modal-dialog
@@ -28,7 +34,8 @@
                 = f.password_field :password, class: 'form-control'
               .form-group.clearfix
                 = f.submit "Log in", class: "btn btn-primary pull-right"
-    %nav.navbar.navbar-inverse.navbar-fixed-top{:role => "navigation"}
+    / Navigation
+    %nav.navbar.navbar-inverse.navbar-fixed-top
       .container
         .navbar-header
           %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", type: "button"}
@@ -39,7 +46,7 @@
           %a.navbar-brand{href: "/"}
             = @title
             %i.fa.fa-rocket.fa-fw
-        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+        #navbar.collapse.navbar-collapse
           %ul.nav.navbar-nav
             %li
               %a{href: "/users"}= I18n.t 'navbar.authors'
@@ -57,38 +64,41 @@
               %li
                 %a{type: :button, data: {toggle: :modal, target: '#loginmodal'}}
                   =I18n.t 'navbar.log-in'
+        / /.nav-collapse
     .container
+      %section
+        .row
+          .col-md-8
+            - flash.each do |message_type, message|
+              %div{class: "alert alert-#{message_type}"}= message
+            = yield
+          .col-md-4.sidebar-gutter
+            = render partial: 'sidebar'          
+    / /.container
+    %footer.footer
+      &nbsp;
       .row
-        .col-md-8
-          - flash.each do |message_type, message|
-            %div{class: "alert alert-#{message_type}"}= message
-          = yield
-        .col-md-4
-          = render partial: 'sidebar'
-      %hr
-        %footer
-          .row
-            .col-lg-9
-              %p
-                %a.no-decoration{href: 'https://github.com/Flipez/tuRBo'}
-                  tuRBo
-                  %small.text-muted
-                    = MySettings.version
-                  - if Rails.env.development?
-                    %span.label.label-danger
-                      running in development mode!
-                made with
-                %i.fa.fa-heart.fa-fw
-                by
-                %a{href: 'https://github.com/Flipez'}
-                  Robert Müller
-                and
-                %a{href: 'https://github.com/Nyomancer'}
-                  Nyomancer
-                %small.text-muted
-                  rendered in
-                  = ((Time.now.to_f - @start_time) * 1000).round(2)
-                  ms
-            .col-lg-3
-              %p.pull-right
-                Made without PHP and MySQL.
+        %p
+          %a.no-decoration{href: 'https://github.com/Flipez/tuRBo'}
+            tuRBo
+            %small.text-muted
+              = MySettings.version
+            - if Rails.env.development?
+              %span.label.label-danger
+                running in development mode!
+      .row  
+        made with
+        %i.fa.fa-heart.fa-fw
+        by
+        %a{href: 'https://github.com/Flipez'}
+          Robert Müller
+        and
+        %a{href: 'https://github.com/Nyomancer'}
+          Nyomancer
+      .row
+        Made without PHP and MySQL.
+      .row
+        %small.text-muted
+          rendered in
+          = ((Time.now.to_f - @start_time) * 1000).round(2)
+          ms

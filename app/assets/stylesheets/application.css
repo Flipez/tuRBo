@@ -13,10 +13,11 @@
  *= require_tree .
  *= require_self
  *= require blog-home
- *= require sb-admin-2
+ * require sb-admin-2
  *= require timeline
  *= require metisMenu.min
  *= require bootstrap-wysihtml5
  *= require bootstrap-tagsinput
  *= require bootstrap3-switch
+ *= require renda
  */

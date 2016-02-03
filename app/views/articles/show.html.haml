@@ -1,34 +1,33 @@
-%h1.page-header
-  = @article.title
-  %small
-    by
-    = @article.user.name
-  %h5
-    %p
-      %i.fa.fa-clock-o
-        = @article.created_at.strftime("%A, %d %B %Y at %k:%M")
-      &nbsp;
-      - if @article.created_at != @article.updated_at
-        %i.fa.fa-edit
-          = @article.updated_at.strftime("%A, %d %B %Y at %k:%M")
-    %p
-      %i.fa.fa-users
-        = @article.impressionist_count(filter: :ip_address)
-        Viewers
-      &nbsp;
-      %i.fa.fa-eye
+%article.blog-post
+  .blog-post-body
+    %h2= @article.title
+    .post-meta
+      %span>
+        by
+        %a{href: "users/#{@article.user.id}"}
+          = @article.user.name
+      \/
+      %span>
+        %i.fa.fa-clock-o>
+        = @article.created_at.strftime("%a, %d %b %Y at %k:%M")
+      \/
+      %span
+        %i.fa.fa-comment-o
+        = @article.comments.count
+      \/
+      %span      
+        %i.fa.fa-eye
         = @article.impressionist_count
-        Hits
-    - if @article.category
-      %p
-        = I18n.t 'article.category.title'
-        %a.label.label-primary{href: "/categories/#{@article.category.id}"}
-          = @article.category.name 
+      - if @article.category
+        \/
+        %span    
+          %i.fa.fa-archive
+          %a{href: "/categories/#{@article.category.id}"}
+            = @article.category.name 
+    
+    .blog-post-text
+      %p= raw @article.text
 
-
-%hr
-= raw @article.text
-%hr
 - @article.tag_list.each do |tag|
   %a.badge{href: "/articles/tags/#{tag}"}
     = tag.to_s

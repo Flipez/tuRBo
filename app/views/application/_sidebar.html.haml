@@ -1,46 +1,40 @@
-.well
-  %h4 
-    %i.fa.fa-hand-spock-o.fa-fw
-    = I18n.t 'sidebar.welcome.title'
-  %p= MySettings.welcome
-.well
-  %h4
-    %i.fa.fa-archive.fa-fw
-    Blog Categories
-  = render partial: 'welcome/category_list'
-.well
-  %h4
-    %i.fa.fa-child.fa-fw
-    = I18n.t 'sidebar.about.title'
-  %p= MySettings.about
-  %p
-    - if MySettings.rss
-      %a.no-decoration.fa.fa-rss-square.fa-2x.fa-fw{href: MySettings.rss}
-    - if MySettings.github
-      %a.no-decoration.fa.fa-github-square.fa-2x.fa-fw{href: MySettings.github}
-    - if MySettings.flickr
-      %a.no-decoration.fa.fa-flickr.fa-2x.fa-fw{href: MySettings.flickr}
-    - if MySettings.mail
-      %a.no-decoration.fa.fa-envelope.fa-2x.fa-fw{href: "mailto:#{MySettings.mail}"}
-    - if MySettings.steam
-      %a.no-decoration.fa.fa-steam-square.fa-2x.fa-fw{href: MySettings.steam}
-.well
-  %h4 
-    %i.fa.fa-list
-    Blogroll
-  - @articles.each do |article|
-    %p
-      %a{href: "/articles/#{article.id}"}
-        = article.title
-        %span.badge.pull-right
-          = article.impressionist_count(filter: :ip_address)
-          visits
-.well
-  %h4
-    %i.fa.fa-tags
-    The ten most used tags
-  - @most_used_tags.each do |tag|
-    %a{href: "/articles/tags/#{tag.name}"}
-      %span.badge
-        = tag.name
+%aside
+  .sidebar-widget
+    %h3.sidebar-title
+      %i.fa.fa-hand-spock-o.fa-fw
+      = I18n.t 'sidebar.welcome.title'
+    %p= MySettings.welcome
+  .sidebar-widget
+    %h3.sidebar-title
+      %i.fa.fa-archive.fa-fw
+      Blog Categories
+    .widget-container
+      = render partial: 'welcome/category_list'
+  .sidebar-widget
+    %h3.sidebar-title
+      %i.fa.fa-child.fa-fw
+      = I18n.t 'sidebar.about.title'
+    .widget-container
+      %p= MySettings.about
+      .widget-socials
+        - if MySettings.rss
+          %a.no-decoration.fa.fa-rss-square.fa-2x.fa-fw{href: MySettings.rss}
+        - if MySettings.github
+          %a.no-decoration.fa.fa-github-square.fa-2x.fa-fw{href: MySettings.github}
+        - if MySettings.flickr
+          %a.no-decoration.fa.fa-flickr.fa-2x.fa-fw{href: MySettings.flickr}
+        - if MySettings.mail
+          %a.no-decoration.fa.fa-envelope.fa-2x.fa-fw{href: "mailto:#{MySettings.mail}"}
+        - if MySettings.steam
+          %a.no-decoration.fa.fa-steam-square.fa-2x.fa-fw{href: MySettings.steam}
+            
+  .sidebar-widget
+    %h3.sidebar-title
+      %i.fa.fa-tags
+      The ten most used tags
+    .widget-container
+      - @most_used_tags.each do |tag|
+        %a{href: "/articles/tags/#{tag.name}"}
+          %span.badge
+            = tag.name
 
