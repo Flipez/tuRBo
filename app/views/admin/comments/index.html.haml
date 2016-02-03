@@ -1,13 +1,13 @@
 .row
   .panel.panel-primary
     .panel-heading
-      Kommentare
+      = I18n.t 'admin.comments.index.heading'
     .panel-body
       %table.table.table-hover
         %thead
           %th.col-md-1
-          %th ID
-          %th Text
+          %th= I18n.t 'admin.comments.index.id'
+          %th= I18n.t 'admin.comments.index.text'
         %tbody
           - @comments.each do |comment|
             %tr

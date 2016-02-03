@@ -9,10 +9,10 @@
             .col-xs-9.text-right
               .huge
                 = @users.count
-              %div Registrierte Benutzer
+              %div= I18n.t 'admin.index.users'
         %a{:href => "/admin/users"}
           .panel-footer
-            %span.pull-left Erfahre mehr
+            %span.pull-left= I18n.t 'admin.index.more'
             %span.pull-right
               %i.fa.fa-arrow-circle-right
             .clearfix
@@ -24,10 +24,10 @@
             .col-xs-9.text-right
               .huge
                 = @articles.count
-              %div Artikel insgesamt
+              %div= I18n.t 'admin.index.articles'
         %a{:href => "/admin/articles"}
           .panel-footer
-            %span.pull-left Erfahre mehr
+            %span.pull-left= I18n.t 'admin.index.more'
             %span.pull-right
               %i.fa.fa-arrow-circle-right
             .clearfix
@@ -39,10 +39,10 @@
             .col-xs-9.text-right
               .huge
                 = @categories.count
-              %div Kategorien insgesamt
+              %div= I18n.t 'admin.index.categories'
         %a{:href => "/admin/categories"}
           .panel-footer
-            %span.pull-left Erfahre mehr
+            %span.pull-left= I18n.t 'admin.index.more'
             %span.pull-right
               %i.fa.fa-arrow-circle-right
             .clearfix
@@ -54,45 +54,45 @@
         %tr
           %td
             %i.fa.fa-clock-o
-            Uptime
+            = I18n.t 'admin.index.uptime'
           %td= @uptime
         %tr
           %td
             %i.fa.fa-clock-o
-            Last update check
+            = I18n.t 'admin.index.last_check'
           %td= @last_gem_check || 'No check yet'
         %tr
           %td
             %i.fa.fa-rocket
-            tuRBo Version
+            = I18n.t 'admin.index.turbo_version'
           %td= MySettings.version
         %tr
           %td 
             %i.devicons.devicons-ruby_on_rails
-            Rails Version
+            = I18n.t 'admin.index.rails_version'
           %td
             = Rails::VERSION::STRING
             - if @outdated_gems.include? 'rails'
               %span.label.label-danger
-                Outdated
+                = I18n.t 'admin.index.outdated'
 
         %tr
           %td 
             %i.devicons.devicons-ruby
-            Ruby Version
+            = I18n.t 'admin.index.ruby_version'
           %td= RUBY_VERSION
         %tr
           %td
             %i.devicons.devicons-ruby_rough
-            Loaded Gems
+            = I18n.t 'admin.index.gems_loaded'
             = "(#{@gems.count})"
           %td
             %button.btn.bt-primary{data: {toggle: :collapse, target: '#gems'}}
-              Show Gemlist
+              = I18n.t 'admin.index.show_gemlist'
               -if @outdated_gems
                 %span.badge
                   = @outdated_gems.count
-                  outdated gems
+                  = I18n.t 'admin.index.outdated_gems'
             .collapse#gems
               %table.table
                 - @gems.sort.each do |gem,version|
@@ -102,7 +102,7 @@
                     %td
                       - if @outdated_gems.to_a.include? gem.to_s
                         %span.label.label-danger
-                          Outdated
+                          = I18n.t 'admin.index.outdated'
                       - else
                         %span.label.label-success
-                          Up to date
+                          = I18n.t 'admin.index.uptodate'

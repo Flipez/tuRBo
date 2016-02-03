@@ -1,17 +1,18 @@
 %h4
-  = I18n.t 'admin.settings.dynamic_url.title'
+  = I18n.t 'admin.settings.dynamic_url.heading'
 
 .panel.panel-info
   .panel-body
-    Example:
-    = "current host is: #{request.host}"
+    = I18n.t 'admin.settings.dynamic_url.example'
+    = I18n.t 'admin.settings.dynamic_url.current_host'
+    = request.host
 .col-md-12
   .col-md-6
     %table.table
       %tr
-        %th Url
-        %th Title
-        %th Subtitle
+        %th= I18n.t 'admin.settings.dynamic_url.url'
+        %th= I18n.t 'admin.settings.dynamic_url.title'
+        %th= I18n.t 'admin.settings.dynamic_url.subtitle'
       - @dynamic_urls.each do |url|
         %tr
           %td= url.url
