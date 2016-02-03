@@ -53,4 +53,15 @@
         - flash.each do |message_type, message|
           %div{class: "alert alert-#{message_type}"}= message
         = yield
-
+        %footer
+          &nbsp;
+          .row
+            %p
+              - if Rails.env.development?
+                %span.label.label-danger
+                  development mode!
+              %small.text-muted
+                &nbsp;
+                rendered in
+                = ((Time.now.to_f - @start_time) * 1000).round(2)
+                ms
