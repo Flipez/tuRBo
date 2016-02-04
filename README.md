@@ -8,10 +8,14 @@ It'll be removed when turbo is modular enough.
 ## Installation
 
 You need redis installed and running on your machine.
-
 ```
 pacman -S redis
 systemctl start redis
+```
+
+Since tuRBo will resize you uploaded images you need imagemagick.
+```
+pacman -S imagemagick
 ```
 
 In order to deploy tuRBo just clone the repository
