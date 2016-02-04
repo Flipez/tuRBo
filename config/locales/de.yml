@@ -46,10 +46,20 @@ de:
     
     settings:
       title: 'Einstellungen'
-      general: 'Allgemein'
+      general: 
+        title: 'Allgemein'
+        lang: 'Sprache des Blogs'
       social:
-        title: 'Soziales'
+        heading: 'Soziales'
         emtpy_warning: 'Bei einem leeren Feld wird das entsprechende Icon ausgeblendet'
+        rss: "RSS-Feed"
+        github: "GitHub-Profil"
+        steam: "Steam-Profil"
+        flickr: "Flickr-Profil"
+        mail: "Email"
+      index:
+        version: "tuRBo Version"
+        experimental_warning: "Experimentelle Features. Ändern auf eigene Gefahr."
       blog: 'Blog'
       recaptcha:
         title: 'reCAPTCHA'
@@ -57,6 +67,13 @@ de:
         private: 'Privater Schlüssel'
         public: 'Öffentlicher Schlüssel'
         enable: 'reCAPTCHA aktivieren?'
+      dynamic_url:
+        heading: "Dynamische URL"
+        example: "Beispiel:"
+        current_host: "aktueller Host"
+        url: "Seiten-URL"
+        title: "Seitenüberschrift"
+        subtitle: "Seitenunterüberschrift"
     
     confirm:
       delete: "Möchtest du das wirklich löschen?"
@@ -71,6 +88,60 @@ de:
     category:
       new:
         title: "Neue Kategorie anlegen"
+
+    index:
+      more: "Mehr anzeigen"
+      users: "Nutzer"
+      articles: "Artikel"
+      categories: "Kategorien"
+      uptime: "Uptime"
+      last_check: "Zuletzt geprüft"
+      turbo_version: "tuRBo Version"
+      ruby_version: "Ruby Version"
+      rails_version: "Rails Version"
+      gems_loaded: "geladene Gems"
+      outdated_gems: "veraltete Gems"
+      show_gemlist: "zeige installierte Gems"
+      uptodate: "Aktuell!"
+    articles:
+      index:
+        heading: "Artikel"
+        id: "ID"
+        title: "Titel"
+        date: "Erstellt am"
+        last_change: "Letze Änderung am"
+    
+      button:
+        new: "Neuer Artikel"
+        
+      new:
+        heading: "Schreibe einen neuen Artikel"
+
+    categories:
+      index:
+        heading: "Kategorien"
+        id: "ID"
+        name: "Kategoriename"
+
+      button:
+        new: "Neue Kategorie"
+
+    comments:
+      index:
+        heading: "Kommentare"
+        id: "ID"
+        text: "Kommentar"
+
+
+    users:
+     index:
+       heading: "Nutzer"
+       id: "ID"
+       name: "Nutzer"
+     
+     button:
+       new: "Neer Nutzer"
+
 
   article:
     category:
