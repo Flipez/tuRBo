@@ -22,7 +22,8 @@
 //= require bootstrap.file-input
 //= mooz.scripts.min
 
-$('document').ready(function() {
+var ready;
+ready = function() {
   $('.bs-switch').bootstrapSwitch();
 
   $('input[type=file]').bootstrapFileInput();
@@ -35,4 +36,7 @@ $('document').ready(function() {
   $('[data-toggle=offcanvas]').click(function() {
     $('.row-offcanvas').toggleClass('active');
   });
-});
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
