@@ -1,4 +1,7 @@
 %article.blog-post
+  - if @article.url
+    .blog-post-image
+      %img{src: @article.url}
   .blog-post-body
     %h2= @article.title
     .post-meta

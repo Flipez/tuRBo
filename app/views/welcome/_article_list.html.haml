@@ -1,24 +1,28 @@
 - if @articles.any?
   - @articles.reverse.each do |article|
-    %article.blog-post
-      .blog-post-body
-        %h2
-          %a{href: "articles/#{article.id}"}
-            = article.title
-        .post-meta
-          %span>
-            by
-            %a{href: "users/#{article.user.id}"}
-              = article.user.name
-          \/
-          %span>
-            %i.fa.fa-clock-o>
-            = article.created_at.strftime("%a, %d %b %Y at %k:%M")
-          \/
-          %span
-            %i.fa.fa-comment-o
-            = article.comments.count
-        %p
-          = raw article.text
+    - if not article.hidden or logged_in?
+      %article.blog-post
+        - if article.url
+          .blog-post-image
+            %img{src: article.url}
+        .blog-post-body
+          %h2
+            %a{href: "articles/#{article.id}"}
+              = article.title
+          .post-meta
+            %span>
+              by
+              %a{href: "users/#{article.user.id}"}
+                = article.user.name
+            \/
+            %span>
+              %i.fa.fa-clock-o>
+              = article.created_at.strftime("%a, %d %b %Y at %k:%M")
+            \/
+            %span
+              %i.fa.fa-comment-o
+              = article.comments.count
+          %p
+            = raw article.text
 - else
   No articles yet :(
