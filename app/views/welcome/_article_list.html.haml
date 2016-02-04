@@ -1,16 +1,24 @@
 - if @articles.any?
   - @articles.reverse.each do |article|
-    %h2
-      %a{href: "articles/#{article.id}"}
-        = article.title
-    %p
-      = raw article.text
-    %p.text-muted
-      by
-      %a{href: "/users/#{article.user.id}"}
-        = article.user.name
-      %span.fa.fa-clock-o
-        = article.created_at.strftime("on %a, %d %b %Y at %k:%M")
-    %hr
+    %article.blog-post
+      .blog-post-body
+        %h2
+          %a{href: "articles/#{article.id}"}
+            = article.title
+        .post-meta
+          %span>
+            by
+            %a{href: "users/#{article.user.id}"}
+              = article.user.name
+          \/
+          %span>
+            %i.fa.fa-clock-o>
+            = article.created_at.strftime("%a, %d %b %Y at %k:%M")
+          \/
+          %span
+            %i.fa.fa-comment-o
+            = article.comments.count
+        %p
+          = raw article.text
 - else
   No articles yet :(

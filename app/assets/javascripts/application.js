@@ -14,12 +14,13 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-//= require sb-admin-2
+// require sb-admin-2
 //= require metisMenu.min
 //= require bootstrap-wysihtml5
 //= require bootstrap-wysihtml5/locales
 //= require bootstrap-tagsinput
 //= require bootstrap-switch
+//= mooz.scripts.min
 
 $('document').ready(function() {
   $('.bs-switch').bootstrapSwitch();

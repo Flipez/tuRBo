@@ -6,3 +6,7 @@
 .settings {
   min-width: 200px;
 }
+
+pre {
+  text-align: left;
+}
