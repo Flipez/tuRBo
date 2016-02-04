@@ -8,7 +8,7 @@ class Admin::ArticlesController < AdminController
 
   def create
     @article = Article.new(article_params)
-    @article.user = User.first
+    @article.user = current_user
     if @article.valid? && @article.save 
       flash[:success] = I18n.t 'admin.create.success'
       redirect_to "/admin/articles/#{@article.id}"
@@ -51,7 +51,7 @@ class Admin::ArticlesController < AdminController
 private
 
   def article_params
-    params.require(:article).permit(:title, :text, :category_id, :tag_list)
+    params.require(:article).permit(:title, :text, :category_id, :tag_list, :url, :hidden)
   end
 
 end

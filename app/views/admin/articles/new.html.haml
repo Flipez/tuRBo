@@ -20,4 +20,12 @@
           = f.label :tag_list
           = f.text_field :tag_list, class: 'form-control', 'data-role' => 'tagsinput'
 
+        .form-group
+          = f.label :url
+          = f.text_field :url, class: 'form-control'
+
+        .form-group
+          = f.label :hidden
+          = f.check_box :hidden, class: 'form-control'
+
         = f.submit class: 'form-control'

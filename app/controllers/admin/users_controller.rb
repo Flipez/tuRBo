@@ -49,7 +49,7 @@ class Admin::UsersController < AdminController
 private
 
   def user_params
-    params.require(:user).permit(:name, :password)
+    params.require(:user).permit(:name, :password, :image_url, :job)
   end
 
 end

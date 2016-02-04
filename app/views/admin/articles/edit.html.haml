@@ -27,4 +27,12 @@
                                     'data-role': :tagsinput,
                                     value: @article.tag_list.join(",")
         
+        .form-group
+          = f.label :url
+          = f.text_field :url, class: 'form-control', value: @article.url
+
+        .form-group
+          = f.label :hidden
+          = f.check_box :hidden, class: 'form-control', checked: @article.hidden
+
         = f.submit class: 'form-control'
