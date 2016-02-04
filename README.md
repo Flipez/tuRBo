@@ -39,6 +39,15 @@ and precompile the assets
 RAILS_ENV=production bundle exec rake assets:precompile
 ```
 
+You also need to generate new secrets for you rails app.
+Copy `config/secrets.yml.example` to `config/secrets.yml`, run
+
+```
+rake secret
+```
+and copy the output to `config/secrets.yml`.
+
+
 ## Configuration
 
 ### First Run
