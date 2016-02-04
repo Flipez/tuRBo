@@ -6,6 +6,7 @@ class Admin::ArticlesController < AdminController
   def new
   end
 
+  # Validate new article and save it in model
   def create
     @article = Article.new(article_params)
     @article.user = User.first
@@ -21,16 +22,19 @@ class Admin::ArticlesController < AdminController
     end
   end
   
+  # Remove article from model
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
     redirect_to :back
   end
   
+  # Load specified article for editing
   def edit
     @article = Article.find(params[:id])
   end
  
+  # Save article in model
   def save
     @article = Article.find(params[:id])
     @article.update_attributes(article_params)
@@ -44,12 +48,14 @@ class Admin::ArticlesController < AdminController
     end
   end
 
+  # Load specific article for display
   def show
     @article = Article.find(params[:id])
   end
 
 private
 
+  # Restrict parameters from POST
   def article_params
     params.require(:article).permit(:title, :text, :category_id, :tag_list)
   end
