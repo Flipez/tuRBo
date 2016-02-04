@@ -117,11 +117,18 @@ en:
       new:
         heading: "Write a new article"
 
+      edit:
+        heading: "Edit an existing article"
+
+
     categories:
       index:
         heading: "Categories"
         id: "ID"
         name: "Category name"
+
+      new:
+        heading: "New category"
 
       button:
         new: "New category"
@@ -138,6 +145,9 @@ en:
        heading: "Users"
        id: "ID"
        name: "User"
+
+     edit:
+       heading: "Edit user"
      
      button:
        new: "New user"

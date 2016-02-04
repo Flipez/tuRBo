@@ -117,11 +117,17 @@ de:
       new:
         heading: "Schreibe einen neuen Artikel"
 
+      edit:
+        heading: "Bearbeite einen existierenden Artikel"
+
     categories:
       index:
         heading: "Kategorien"
         id: "ID"
         name: "Kategoriename"
+
+      new:
+        heading: "Neue Kategorie"
 
       button:
         new: "Neue Kategorie"
@@ -138,9 +144,12 @@ de:
        heading: "Nutzer"
        id: "ID"
        name: "Nutzer"
+
+     edit:
+       heading: "Nutzer bearbeiten"
      
      button:
-       new: "Neer Nutzer"
+       new: "Neuer Nutzer"
 
 
   article:
