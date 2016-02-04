@@ -18,18 +18,19 @@ class Admin::UsersController < AdminController
 
   def save
     @user = User.find(params[:id])
-    @user.update_attributes(user_params)
    
     unless @user.id == current_user.id
       flash[:danger] = 'You can only edit yourself'
       return redirect_to :back
     end
+    
+    @user.update_attributes(user_params)
 
     if @user.save
       flash[:success] = 'User successfully updated'
       redirect_to :back
     else
-      flash[:danger] = @user.errors.join('<br />').html_safe
+      flash[:danger] = @user.errors.full_messages.to_sentence
       redirect_to :back
     end
   end
@@ -49,7 +50,7 @@ class Admin::UsersController < AdminController
 private
 
   def user_params
-    params.require(:user).permit(:name, :password, :image_url, :job)
+    params.require(:user).permit(:name, :password, :image_url, :job, :avatar, :remote_avatar_url, :remove_avatar)
   end
 
 end

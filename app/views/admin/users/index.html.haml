@@ -13,10 +13,10 @@
           - @users.each do |user|
             %tr
               %td
-                %i.fa.fa-user.fa-fw
-              %td= user.id
-              %td= user.name
-              %td
+                %img.center-block{src: user.avatar_url, style: 'height: 40px;' }
+              %td{style: 'vertical-align: middle;'}= user.id
+              %td{style: 'vertical-align: middle;'}= user.name
+              %td.pull-right{style: 'vertical-align: middle;'}
                 .btn-group
                   %a.btn.btn-warning{href: "users/#{user.id}/edit"}
                     %i.fa.fa-edit

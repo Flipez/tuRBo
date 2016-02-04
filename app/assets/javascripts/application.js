@@ -14,17 +14,25 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-// require sb-admin-2
 //= require metisMenu.min
 //= require bootstrap-wysihtml5
 //= require bootstrap-wysihtml5/locales
 //= require bootstrap-tagsinput
 //= require bootstrap-switch
+//= require bootstrap.file-input
 //= mooz.scripts.min
 
 $('document').ready(function() {
   $('.bs-switch').bootstrapSwitch();
+
+  $('input[type=file]').bootstrapFileInput();
+  $('.file-inputs').bootstrapFileInput();
+
   $('.wysihtml5').each(function(i, elem) {
     $(elem).wysihtml5();
+  });
+  
+  $('[data-toggle=offcanvas]').click(function() {
+    $('.row-offcanvas').toggleClass('active');
   });
 });

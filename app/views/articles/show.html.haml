@@ -1,7 +1,7 @@
 %article.blog-post
-  - if @article.url
+  - if @article.header_url
     .blog-post-image
-      %img{src: @article.url}
+      %img{src: @article.header_url}
   .blog-post-body
     %h2= @article.title
     .post-meta

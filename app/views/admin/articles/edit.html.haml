@@ -28,8 +28,8 @@
                                     value: @article.tag_list.join(",")
         
         .form-group
-          = f.label :url
-          = f.text_field :url, class: 'form-control', value: @article.url
+          = f.label :header
+          = f.file_field :header, class: 'form-control'
 
         .form-group
           = f.label :hidden

@@ -18,15 +18,3 @@
 //= require metisMenu.min
 //= require bootstrap-wysihtml5
 //= require bootstrap-wysihtml5/locales
-
-$(document).ready(function() {
-  $('[data-toggle=offcanvas]').click(function() {
-    $('.row-offcanvas').toggleClass('active');
-  });
-});
-$(document).ready(function(){
-    $('.wysihtml5').each(function(i, elem) {
-      $(elem).wysihtml5();
-    });
-  })
-
