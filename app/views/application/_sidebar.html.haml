@@ -3,7 +3,8 @@
     .sidebar-widget
       %h3.sidebar-title Author
       .widget-container.widget-about
-        %img{src: @article.user.image_url}
+        - if @article.user.image_url and not @article.user.image_url.empty?
+          %img{src: @article.user.image_url}
         %h4= @article.user.name
         .author-title
           = @article.user.job
