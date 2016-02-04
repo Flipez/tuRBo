@@ -1,4 +1,4 @@
-%h4= I18n.t 'admin.settings.general'
+%h4= I18n.t 'admin.settings.general.title'
 .input-group
   %span.input-group-addon.settings= I18n.t 'blog.title'
   %input.form-control{type: :text, name: :title, value: MySettings.title}
@@ -10,7 +10,7 @@
   %input.form-control{type: :text, name: :url, value: MySettings.url}
 
 .input-group
-  %span.input-group-addon.settings= I18n.t 'blog.url'
+  %span.input-group-addon.settings= I18n.t 'admin.settings.general.lang'
   %select.form-control{name: :locale}
     - MySettings.available_locales.each do |locale|
       %option{selected: (true if locale.to_s == MySettings.locale.to_s) }= locale

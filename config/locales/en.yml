@@ -46,17 +46,34 @@ en:
     
     settings:
       title: 'Settings'
-      general: 'General'
+      general:
+        title: 'General'
+        lang: "Blog language" 
       social:
-        title: 'Social'
+        heading: 'Social'
         emtpy_warning: 'If a field is empty, the icon will disappear'
+        rss: "RSS feed"
+        github: "GitHub profile"
+        steam: "Steam profile"
+        flickr: "Flickr profile"
+        mail: "Email"
+      index:
+        version: "tuRBo version"
+        experimental_warning: "Highly experimental features beyond!"
       blog: 'Blog'
       recaptcha:
-        title: 'reCAPTCHA'
+        heading: 'reCAPTCHA'
         reboot_warning: 'Requires the Appserver to restart'
         private: 'Private Key'
         public: 'Public Key'
         enable: 'activate reCAPTCHA?'
+      dynamic_url:
+        heading: "Dynamic URL"
+        example: "Example:"
+        current_host: "current host"
+        url: "Site URL"
+        title: "Site title"
+        subtitle: "Site subtitle"
     
     confirm:
       delete: "Do you really want to delete?"
@@ -86,7 +103,6 @@ en:
       outdated_gems: "outdated gems"
       show_gemlist: "Show installed gems"
       uptodate: "Up to date!"
-
     articles:
       index:
         heading: "Articles"
@@ -116,6 +132,15 @@ en:
         id: "ID"
         text: "Comment"
 
+
+    users:
+     index:
+       heading: "Users"
+       id: "ID"
+       name: "User"
+     
+     button:
+       new: "New user"
 
 
   article:

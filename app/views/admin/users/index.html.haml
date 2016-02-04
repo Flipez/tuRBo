@@ -1,13 +1,13 @@
 .row
   .panel.panel-primary
     .panel-heading
-      = I18n.t 'admin.settings.users.index.heading'
+      = I18n.t 'admin.users.index.heading'
     .panel-body
       %table.table.table-hover
         %thead
           %th.col-md-1
-          %th= I18n.t 'admin.settings.users.index.id'
-          %th= I18n.t 'admin.settings.users.index.name'
+          %th= I18n.t 'admin.users.index.id'
+          %th= I18n.t 'admin.users.index.name'
           %th
         %tbody
           - @users.each do |user|
@@ -25,4 +25,4 @@
                                             confirm: I18n.t('admin.confirm.delete')}}
                     %i.fa.fa-trash-o
   %a.btn.btn-primary{type: :button, href: 'users/new'}
-    = I18n.t 'admin.settings.users.button.new'
+    = I18n.t 'admin.users.button.new'
