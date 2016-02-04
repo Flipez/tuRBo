@@ -62,7 +62,7 @@
                 = link_to I18n.t('navbar.log-out'), logout_path, method: :delete
             - else
               %li
-                %a{type: :button, data: {toggle: :modal, target: '#loginmodal'}}
+                %a{type: :button, data: {toggle: :modal, target: '#loginmodal'}, style: 'cursor: pointer;'}
                   =I18n.t 'navbar.log-in'
         / /.nav-collapse
     .container
