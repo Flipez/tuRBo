@@ -19,6 +19,7 @@ gem "bootstrap-switch-rails"
 
 gem 'carrierwave', github:'carrierwaveuploader/carrierwave'
 gem 'file_validators'
+gem 'mini_magick'
 
 gem 'rails-i18n'
 gem "recaptcha", require: "recaptcha/rails"

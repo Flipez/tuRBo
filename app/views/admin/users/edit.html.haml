@@ -14,10 +14,26 @@
 
         .form-group
           = f.label :avatar
-          = image_tag(@user.avatar_url, class: 'form-contrl') if @user.avatar?
-          = f.text_field :remote_avatar_url, placeholder: :remote, class: 'form-control'
-          = f.file_field :avatar, class: 'form-control'
-          = f.check_box :remove_avatar, class: 'form-control'
+          .col-md-12
+            .col-md-3
+              %div.center-block{style: 'max-width: 50%;'}
+                = image_tag(@user.avatar_url, class: 'form-contrl') if @user.avatar?
+            .col-md-9
+              .input-group
+                %span.input-group-addon.settings
+                  Load from remote
+                %span
+                  = f.text_field :remote_avatar_url, placeholder: :remote, class: 'form-control'
+              .input-group
+                %span.input-group-addon.settings
+                  Load from File
+                %span.form
+                  = f.file_field :avatar, class: 'form-control'
+              .input-group
+                %span.input-group-addon.settings
+                  Delete Avatar
+                %span.form-control
+                  = f.check_box :remove_avatar
         
         .form-group
           = f.label :image_url
