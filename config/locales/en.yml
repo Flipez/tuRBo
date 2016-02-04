@@ -72,6 +72,37 @@ en:
       new:
         title: "Create a new category"
 
+    index:
+      more: "Show more"
+      users: "Users"
+      articles: "Articles"
+      categories: "Categories"
+      uptime: "Uptime"
+      last_check: "Last checked"
+      turbo_version: "tuRBo version"
+      ruby_version: "Ruby version"
+      rails_version: "Rails version"
+      gems_loaded: "Gems loaded"
+      outdated_gems: "outdated gems"
+      show_gemlist: "Show installed gems"
+      uptodate: "Up to date!"
+
+    articles:
+      index:
+        heading: "Articles"
+        id: "ID"
+        title: "Title"
+        date: "Created on"
+        last_change: "Last change on"
+    
+      button:
+        new: "New article"
+        
+      new:
+        heading: "Write a new article"
+
+
+
   article:
     category:
       title: "Categories: "
