@@ -5,7 +5,7 @@ en:
     url: 'Site-URL'
   
   errors:
-    404:
+    '404':
       title: '404 Site not found'
       content: 'Try to use the sidebar to find the resource you are looking for'
     '500':
@@ -59,7 +59,7 @@ en:
         mail: "Email"
       index:
         version: "tuRBo version"
-        experimental_warning: "Highly experimental features beyond!"
+        experimental_warning: "Highly experimental features beyond! Change at your own risk."
       blog: 'Blog'
       recaptcha:
         heading: 'reCAPTCHA'
@@ -72,8 +72,8 @@ en:
         example: "Example:"
         current_host: "current host"
         url: "Site URL"
-        title: "Site title"
-        subtitle: "Site subtitle"
+        title: "Site heading"
+        subtitle: "Site subheading"
     
     confirm:
       delete: "Do you really want to delete?"
