@@ -1,15 +1,15 @@
 .row
   .panel.panel-primary
     .panel-heading
-      Aktuelle Artikel
+      = I18n.t 'admin.articles.index.heading'
     .panel-body
       %table.table.table-hover
         %thead
           %th.col-md-1
-          %th ID
-          %th Titel
-          %th Datum
-          %th Zuletzt bearbeitet
+          %th= I18n.t 'admin.articles.index.id'
+          %th= I18n.t 'admin.articles.index.title'
+          %th= I18n.t 'admin.articles.index.date'
+          %th= I18n.t 'admin.articles.index.last_change'
           %th
 
         %tbody
@@ -31,8 +31,8 @@
                     %i.fa.fa-edit
                   %a.btn.btn-danger{href: "articles/#{article.id}",
                                     data: { method: :delete, 
-                                            confirm: 'Wirklich löschen?'}}
+                                            confirm: I18n.t('admin.confirm.delete')}}
                     %i.fa.fa-trash-o
 
   %a.btn.btn-primary{type: :button, href: 'articles/new'}
-    Neuen Artikel anlegen
+    = I18n.t 'admin.articles.button.new'

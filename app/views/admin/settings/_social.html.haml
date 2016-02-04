@@ -1,20 +1,20 @@
 %h4
-  = I18n.t 'admin.settings.social.title'
+  = I18n.t 'admin.settings.social.heading'
   %small
     %span.fa.fa-fw.fa-exclamation-circle{style: 'color: orange;'}
     = I18n.t 'admin.settings.social.emtpy_warning'
 .input-group
-  %span.input-group-addon.settings RSS Feed
+  %span.input-group-addon.settings= I18n.t 'admin.settings.social.rss'
   %input.form-control{type: :text, name: :rss, value: MySettings.rss}
 .input-group
-  %span.input-group-addon.settings GitHub
+  %span.input-group-addon.settings= I18n.t 'admin.settings.social.github'
   %input.form-control{type: :text, name: :github, value: MySettings.github}
 .input-group
-  %span.input-group-addon.settings Steam
+  %span.input-group-addon.settings= I18n.t 'admin.settings.social.steam'
   %input.form-control{type: :text, name: :steam, value: MySettings.steam}
 .input-group
-  %span.input-group-addon.settings flickr
+  %span.input-group-addon.settings= I18n.t 'admin.settings.social.flickr'
   %input.form-control{type: :text, name: :flickr,  value: MySettings.flickr}
 .input-group
-  %span.input-group-addon.settings Mail
+  %span.input-group-addon.settings= I18n.t 'admin.settings.social.mail'
   %input.form-control{type: :text, name: :mail, value: MySettings.mail}

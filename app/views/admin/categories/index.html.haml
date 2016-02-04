@@ -1,13 +1,13 @@
 .row
   .panel.panel-primary
     .panel-heading
-      Kategorien
+      = I18n.t 'admin.categories.index.heading'
     .panel-body
       %table.table.table-hover
         %thead
           %th.col-md-1
-          %th ID
-          %th Name
+          %th= I18n.t 'admin.categories.index.id'
+          %th= I18n.t 'admin.categories.index.name'
         %tbody
           - @categories.each do |category|
             %tr
@@ -21,4 +21,4 @@
                                           confirm: I18n.t('admin.confirm.delete')}}
                   %i.fa.fa-trash-o
   %a.btn.btn-primary{type: :button, href: 'categories/new'}
-    Neue Kategorie anlegen
+    = I18n.t 'admin.categories.button.new'

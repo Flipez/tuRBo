@@ -6,7 +6,7 @@
     %hr
     = render partial: 'social'
     .input-group
-      %span.input-group-addon.settings Version
+      %span.input-group-addon.settings= I18n.t 'admin.settings.index.version'
       %input.form-control{disabled: true, type: :text, name: :mail, value: MySettings.version}
     %hr
     = render partial: 'recaptcha'
@@ -15,6 +15,6 @@
 .clearfix
 %span.alert.alert-danger
   %span.fa.fa-exclamation-triangle
-  Highly experimental features beyond this point
+  = I18n.t 'admin.settings.index.experimental_warning'
 %hr
 = render partial: 'dynamic_url'
