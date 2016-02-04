@@ -101,6 +101,21 @@ en:
       new:
         heading: "Write a new article"
 
+    categories:
+      index:
+        heading: "Categories"
+        id: "ID"
+        name: "Category name"
+
+      button:
+        new: "New category"
+
+    comments:
+      index:
+        heading: "Comments"
+        id: "ID"
+        text: "Comment"
+
 
 
   article:
