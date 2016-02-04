@@ -11,6 +11,13 @@
         .form-group
           = f.label :password
           = f.password_field :password, class: 'form-control'
+
+        .form-group
+          = f.label :avatar
+          = image_tag(@user.avatar_url, class: 'form-contrl') if @user.avatar?
+          = f.text_field :remote_avatar_url, placeholder: :remote, class: 'form-control'
+          = f.file_field :avatar, class: 'form-control'
+          = f.check_box :remove_avatar, class: 'form-control'
         
         .form-group
           = f.label :image_url

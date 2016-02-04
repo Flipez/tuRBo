@@ -6,7 +6,6 @@ gem 'rails'
 gem 'sqlite3'
 gem 'sass-rails'
 
-#gem 'config'
 gem "rails-settings-cached", "~> 0.4.0"
 
 gem 'uglifier'
@@ -19,6 +18,7 @@ gem 'bootstrap-tagsinput-rails'
 gem "bootstrap-switch-rails"
 
 gem 'carrierwave', github:'carrierwaveuploader/carrierwave'
+gem 'file_validators'
 
 gem 'rails-i18n'
 gem "recaptcha", require: "recaptcha/rails"
