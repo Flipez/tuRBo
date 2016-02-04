@@ -1,33 +1,42 @@
 %aside
-  .sidebar-widget
-    %h3.sidebar-title
-      %i.fa.fa-hand-spock-o.fa-fw
-      = I18n.t 'sidebar.welcome.title'
-    %p= MySettings.welcome
+  - if @article
+    .sidebar-widget
+      %h3.sidebar-title Author
+      .widget-container.widget-about
+        %img{src: @article.user.image_url}
+        %h4= @article.user.name
+        .author-title
+          = @article.user.job
+  - else
+    .sidebar-widget
+      %h3.sidebar-title
+        %i.fa.fa-hand-spock-o.fa-fw
+        = I18n.t 'sidebar.welcome.title'
+      %p= MySettings.welcome
+    .sidebar-widget
+      %h3.sidebar-title
+        %i.fa.fa-child.fa-fw
+        = I18n.t 'sidebar.about.title'
+      .widget-container
+        %p= MySettings.about
+        .widget-socials
+          - if MySettings.rss
+            %a.no-decoration.fa.fa-rss-square.fa-2x.fa-fw{href: MySettings.rss}
+          - if MySettings.github
+            %a.no-decoration.fa.fa-github-square.fa-2x.fa-fw{href: MySettings.github}
+          - if MySettings.flickr
+            %a.no-decoration.fa.fa-flickr.fa-2x.fa-fw{href: MySettings.flickr}
+          - if MySettings.mail
+            %a.no-decoration.fa.fa-envelope.fa-2x.fa-fw{href: "mailto:#{MySettings.mail}"}
+          - if MySettings.steam
+            %a.no-decoration.fa.fa-steam-square.fa-2x.fa-fw{href: MySettings.steam}
+            
   .sidebar-widget
     %h3.sidebar-title
       %i.fa.fa-archive.fa-fw
       Blog Categories
     .widget-container
       = render partial: 'welcome/category_list'
-  .sidebar-widget
-    %h3.sidebar-title
-      %i.fa.fa-child.fa-fw
-      = I18n.t 'sidebar.about.title'
-    .widget-container
-      %p= MySettings.about
-      .widget-socials
-        - if MySettings.rss
-          %a.no-decoration.fa.fa-rss-square.fa-2x.fa-fw{href: MySettings.rss}
-        - if MySettings.github
-          %a.no-decoration.fa.fa-github-square.fa-2x.fa-fw{href: MySettings.github}
-        - if MySettings.flickr
-          %a.no-decoration.fa.fa-flickr.fa-2x.fa-fw{href: MySettings.flickr}
-        - if MySettings.mail
-          %a.no-decoration.fa.fa-envelope.fa-2x.fa-fw{href: "mailto:#{MySettings.mail}"}
-        - if MySettings.steam
-          %a.no-decoration.fa.fa-steam-square.fa-2x.fa-fw{href: MySettings.steam}
-            
   .sidebar-widget
     %h3.sidebar-title
       %i.fa.fa-tags
