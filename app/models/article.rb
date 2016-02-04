@@ -1,5 +1,7 @@
 class Article < ActiveRecord::Base
 
+  mount_uploader :header, HeaderUploader
+
   belongs_to :category
   belongs_to :user
 
