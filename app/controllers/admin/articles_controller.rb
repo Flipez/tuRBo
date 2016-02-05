@@ -10,15 +10,13 @@ class Admin::ArticlesController < AdminController
   def create
     @article = Article.new(article_params)
     @article.user = current_user
+    
     if @article.valid? && @article.save 
       flash[:success] = I18n.t 'admin.create.success'
       redirect_to "/admin/articles/#{@article.id}"
     else
-      p @article.errors.each{|x| x.to_s}
-      errorlist = ""
-      @article.errors.each{|k,v| errorlist += (k.to_s + " " + v.to_s + "<br />")}
-      flash[:danger] = "Article invalid<br />#{errorlist}".html_safe
-      render :article_new
+      flash[:danger] = @article.errors.full_messages.to_sentence
+      render :new
     end
   end
   
@@ -43,7 +41,7 @@ class Admin::ArticlesController < AdminController
       flash[:success] = 'Article successfully updated'
       redirect_to "/admin/articles/#{@article.id}"
     else
-      flash[:danger] = @article.errors.join('<br />').html_safe
+      flash[:danger] = @article.errors.full_messages.to_sentence
       redirect_to :back
     end
   end
