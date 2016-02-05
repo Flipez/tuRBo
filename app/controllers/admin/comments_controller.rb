@@ -4,8 +4,7 @@ class Admin::CommentsController < AdminController
   end
 
   def destroy
-    @comment = Comment.find(params[:id])
-    @comment.destroy
+    @comment = Comment.find(params[:id]).destroy
     if Comment.where(id: params[:id]).any?
       flash[:danger] = I18n.t 'admin.delete.error'
     else

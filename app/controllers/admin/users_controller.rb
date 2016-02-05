@@ -8,8 +8,13 @@ class Admin::UsersController < AdminController
   
   def create
     @user = User.new(user_params)
-    @user.save
-    redirect_to :back
+    if @user.valid? && @user.save
+      flash[:success] = I18n.t 'admin.users.create.success'
+      redirect_to :back
+    else
+      flash[:danger] = @user.errors.full_messages.to_sentence
+      render :new
+    end
   end
 
   def edit
@@ -20,14 +25,14 @@ class Admin::UsersController < AdminController
     @user = User.find(params[:id])
    
     unless @user.id == current_user.id
-      flash[:danger] = 'You can only edit yourself'
+      flash[:danger] = I18n.t 'admin.users.edit.self_error'
       return redirect_to :back
     end
     
     @user.update_attributes(user_params)
 
     if @user.save
-      flash[:success] = 'User successfully updated'
+      flash[:success] = I18n.t 'admin.users.edit.success'
       redirect_to :back
     else
       flash[:danger] = @user.errors.full_messages.to_sentence
@@ -42,7 +47,7 @@ class Admin::UsersController < AdminController
       log_out
       redirect_to root_url
     else
-      flash[:danger] = 'You can only edit yourself'
+      flash[:danger] = I18n.t 'admin.users.edit.self_error'
       redirect_to :back
     end
   end

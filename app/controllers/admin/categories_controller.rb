@@ -10,15 +10,15 @@ class Admin::CategoriesController < AdminController
     @category = Category.new(category_params)
     if @category.save
       flash[:success] = I18n.t 'admin.create.success'
+      redirect_to "/admin/categories"
     else
-      p @category.errors.each{|x| x.to_s}
+      flash[:danger] = @category.errors.full_messages.to_sentence
+      render :new
     end
-    redirect_to "/admin/categories"
   end
 
   def destroy
-    @category = Category.find(params[:id])
-    @category.destroy
+    @category = Category.find(params[:id]).destroy
     if Category.where(id: params[:id]).any?
       flash[:danger] = I18n.t 'admin.delete.error'
     else
