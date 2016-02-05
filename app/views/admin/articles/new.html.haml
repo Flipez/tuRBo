@@ -25,10 +25,7 @@
           = f.file_field :header, class: 'form-control'
 
         .form-group
-          .checkbox
-            %input#hidden{type: :checkbox, name: :hidden}
-              %label{for: :hidden}
-                Hidden
-              
+          = f.label :hidden
+          = f.check_box :hidden, class: 'form-control', checked: @article.hidden
 
         = f.submit class: 'form-control'
