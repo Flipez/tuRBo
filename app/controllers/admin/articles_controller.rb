@@ -13,7 +13,7 @@ class Admin::ArticlesController < AdminController
     
     if @article.valid? && @article.save 
       flash[:success] = I18n.t 'admin.create.success'
-      redirect_to "/admin/articles/#{@article.id}"
+      redirect_to "/admin/articles/#{@article.id}/edit"
     else
       flash[:danger] = @article.errors.full_messages.to_sentence
       render :new
@@ -39,7 +39,7 @@ class Admin::ArticlesController < AdminController
     
     if @article.save
       flash[:success] = 'Article successfully updated'
-      redirect_to "/admin/articles/#{@article.id}"
+      redirect_to "/admin/articles/#{@article.id}/edit"
     else
       flash[:danger] = @article.errors.full_messages.to_sentence
       redirect_to :back
