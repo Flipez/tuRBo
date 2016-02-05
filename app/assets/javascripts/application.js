@@ -30,7 +30,7 @@ ready = function() {
   $('.file-inputs').bootstrapFileInput();
 
   $('.wysihtml5').each(function(i, elem) {
-    $(elem).wysihtml5();
+    $(elem).wysihtml5({'toolbar': {'html': true}});
   });
   
   $('[data-toggle=offcanvas]').click(function() {
