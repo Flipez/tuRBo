@@ -14,7 +14,7 @@
 
         .form-group
           = f.label :category
-          = f.collection_select :category_id, Category.all,:id,:name
+          = f.collection_select :category_id, Category.all,:id,:name,{}, {class: 'form-control'}
 
         .form-group
           = f.label :tag_list
@@ -25,7 +25,10 @@
           = f.file_field :header, class: 'form-control'
 
         .form-group
-          = f.label :hidden
-          = f.check_box :hidden, class: 'form-control'
+          .checkbox
+            %input#hidden{type: :checkbox, name: :hidden}
+              %label{for: :hidden}
+                Hidden
+              
 
         = f.submit class: 'form-control'
