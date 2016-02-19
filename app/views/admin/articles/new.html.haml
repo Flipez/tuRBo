@@ -1,31 +1,26 @@
-.row
-  .panel.panel-primary
-    .panel-heading
-      = I18n.t 'admin.articles.new.heading'
-    .panel-body
-      = form_for :article do |f|
-        .form-group
-          = f.label :title
-          = f.text_field :title, class: 'form-control'
+= form_for :article do |f|
+  .form-group
+    = f.label :title
+    = f.text_field :title, class: 'form-control'
 
-        .form-group
-          = f.label :text
-          = f.text_area :text, class: 'form-control wysihtml5'
+  .form-group
+    = f.label :text
+    = f.text_area :text, class: 'form-control wysihtml5'
 
-        .form-group
-          = f.label :category
-          = f.collection_select :category_id, Category.all,:id,:name,{}, {class: 'form-control'}
+  .form-group
+    = f.label :category
+    = f.collection_select :category_id, Category.all,:id,:name,{}, {class: 'form-control'}
 
-        .form-group
-          = f.label :tag_list
-          = f.text_field :tag_list, class: 'form-control', 'data-role' => 'tagsinput'
+  .form-group
+    = f.label :tag_list
+    = f.text_field :tag_list, class: 'form-control', 'data-role' => 'tagsinput'
 
-        .form-group
-          = f.label :header
-          = f.file_field :header, class: 'form-control'
+  .form-group
+    = f.label :header
+    = f.file_field :header, class: 'form-control'
 
-        .form-group
-          = f.label :hidden
-          = f.check_box :hidden, class: 'form-control'
+  .form-group
+    = f.label :hidden
+    = f.check_box :hidden, class: 'form-control'
 
-        = f.submit class: 'form-control'
+  = f.submit class: 'form-control'
