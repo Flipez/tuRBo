@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   skip_before_filter :require_login
   
+  # take params from post and create a new comment
   def create
     article = Article.find(params[:id])
     comment = Comment.new(comment_params)
@@ -16,10 +17,12 @@ class CommentsController < ApplicationController
   end
 
   private
+    # only take valid params
     def comment_params
       params.require(:comment).permit(:title, :text)
     end
 
+    # check if captcha is valid
     def is_valid? comment
       if MySettings.enable_recaptcha
         return false unless verify_recaptcha(model: comment)

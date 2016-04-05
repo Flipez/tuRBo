@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
   def index
   end
 
+  # fetch article regarding the id
   def show
     @article = Article.find(params[:id])
   end
